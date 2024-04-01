@@ -1,0 +1,14 @@
+Django==5.0.1
+numpy==1.26.3
+pandas==2.2.0
+matplotlib==3.8.2
+seaborn==0.13.1
+scikit-learn==1.4.0
+beautifulsoup4==4.12.3
+mysql-connector-python==8.3.0
+tensorflow==2.15.0.post1
+fastai==2.7.14
+torch==2.2.1
+torchvision==0.17.1
+torchaudio==2.2.1
+opencv-python==4.8.0.76
