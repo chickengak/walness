@@ -9,3 +9,12 @@ from django.contrib import messages
 def index(request):
     #return HttpResponse("Hello, world. You're at the polls index.")
     return render(request, "index.html")
+
+def left_sidebar_view(request):
+    return render(request, "left-sidebar.html")
+
+def right_sidebar_view(request):
+    return render(request, "right-sidebar.html")
+
+def no_sidebar_view(request):
+    return render(request, "no-sidebar.html")
