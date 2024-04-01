@@ -10,7 +10,7 @@
         <title>No Sidebar - TXT by HTML5 UP</title>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" />
     </head>
     <body class="is-preload">
         <div id="page-wrapper">
@@ -28,7 +28,7 @@
             <!-- Nav -->
                 <nav id="nav">
                     <ul>
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="{% url 'index' %}">Home</a></li>
                         <li>
                             <a href="#">Dropdown</a>
                             <ul>
@@ -46,9 +46,9 @@
                                 <li><a href="#">Veroeros feugiat</a></li>
                             </ul>
                         </li>
-                        <li><a href="left-sidebar.html">Left Sidebar</a></li>
-                        <li><a href="right-sidebar.html">Right Sidebar</a></li>
-                        <li class="current"><a href="no-sidebar.html">No Sidebar</a></li>
+                        <li><a href="{% url 'left_sidebar_view' %}">Left Sidebar</a></li>
+                        <li><a href="{% url 'right_sidebar_view' %}">Right Sidebar</a></li>
+                        <li class="current"><a href="{% url 'no_sidebar_view' %}">No Sidebar</a></li>
                     </ul>
                 </nav>
 
@@ -245,13 +245,13 @@
         </div>
 
         <!-- Scripts -->
-            <script src="{% static 'assets/js/jquery.min.js' %}"></script>
-            <script src="{% static 'assets/js/jquery.dropotron.min.js' %}"></script>
-            <script src="{% static 'assets/js/jquery.scrolly.min.js' %}"></script>
-            <script src="{% static 'assets/js/browser.min.js' %}"></script>
-            <script src="{% static 'assets/js/breakpoints.min.js' %}"></script>
-            <script src="{% static 'assets/js/util.js' %}"></script>
-            <script src="{% static 'assets/js/main.js' %}"></script>
+            <script src="{% static 'js/jquery.min.js' %}"></script>
+            <script src="{% static 'js/jquery.dropotron.min.js' %}"></script>
+            <script src="{% static 'js/jquery.scrolly.min.js' %}"></script>
+            <script src="{% static 'js/browser.min.js' %}"></script>
+            <script src="{% static 'js/breakpoints.min.js' %}"></script>
+            <script src="{% static 'js/util.js' %}"></script>
+            <script src="{% static 'js/main.js' %}"></script>
 
     </body>
 </html>
