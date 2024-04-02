@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect           # response의 응답페이지 함수
 from django.http import HttpResponse, JsonResponse      # 응답페이지의 형식
-# from .models import InputDataModel
+from django.conf import settings
 from django.contrib import messages
 # from .utils import *
 
@@ -17,4 +17,5 @@ def right_sidebar_view(request):
     return render(request, "right-sidebar.html")
 
 def no_sidebar_view(request):
-    return render(request, "no-sidebar.html")
+    context = {'google_maps_api_key': settings.GOOGLE_MAPS_API_KEY}
+    return render(request, "no-sidebar.html", context)
