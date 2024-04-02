@@ -11,16 +11,23 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 import os
 from pathlib import Path
+import json
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+file_path = "./keys.json"
+with open(file_path, 'r') as file:
+    keys = json.load(file)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
+GOOGLE_MAPS_API_KEY = keys['GOOGLE_MAPS_API_KEY']
+
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-75td7wc*-tgbm)p(p@)(yzq+zs1fueft=q9k(e(^7bd*z&089s"
+SECRET_KEY = keys['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
