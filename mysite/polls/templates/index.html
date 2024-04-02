@@ -11,6 +11,21 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+        <style>
+            @font-face {
+                font-family: 'NPSfontBold';
+                src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2310@1.0/NPSfontBold.woff2')
+                     format('woff2');
+                font-weight: 700;
+                font-style: normal;
+            }
+            
+            /* 원하는 요소에 폰트 적용 */
+            h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
+            h1, h2, h3, h4, h5, h6, p, a {
+                font-family: 'NPSfontBold', sans-serif;
+            }
+        </style>
     </head>
     <body class="homepage is-preload">
         <div id="page-wrapper">
@@ -19,8 +34,8 @@
                 <header id="header">
                     <div class="logo container">
                         <div>
-                            <h1><a href="index.html" id="logo">TXT</a></h1>
-                            <p>A responsive site template by HTML5 UP</p>
+                            <h1><a href="index.html" id="logo">왈니스</a></h1>
+                            <p>왈니스</p>
                         </div>
                     </div>
                 </header>
@@ -55,7 +70,7 @@
             <!-- Banner -->
                 <section id="banner">
                     <div class="content">
-                        <h2>Welcome to TXT by HTML5 UP</h2>
+                        <h2>왈니스</h2>
                         <p>A free responsive site template built on HTML5, CSS3, and some other stuff</p>
                         <a href="#main" class="button scrolly">Alright let's go</a>
                     </div>
@@ -97,7 +112,7 @@
 
                                                     <!-- Feature -->
                                                         <section class="box feature">
-                                                            <a href="#" class="image featured"><img src="{% static 'images/pic01.jpg' %}" alt="" /></a>
+                                                            <a href="#" class="image featured"><img src="{% static 'images/dogey.png' %}" alt="" /></a>
                                                             <h3><a href="#">A Subheading</a></h3>
                                                             <p>
                                                                 Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
