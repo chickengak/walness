@@ -1,0 +1,921 @@
+{
+    "html_attributions": [],
+    "next_page_token": "ATplDJY6P9TiTj44k1BXlye4daU8DmOmQ3mRYpayfTRqM_ufVoaxgW0s10zdl23iUjwPpaD-Noo1ZJA2a5-GI9TYvdbNLWphjo6vWyYIII18zO2-8z4ZHjHRWO256fAO81xXAWtxV44vrGY74_vXEXAW0km58QDSWx4xlGVjhSWitIz2YDC5J8u5NZCMFmyomIM546oz8UBi9GTEduEdcVX7xcd05m3UHmEZeHD6E444inJquhbqU8v4k6pkFtY9B768ohmYMqF4PMXAdM1RYsM_ct5Yilnvh3mSwj9PKe3sZzc0uzFml9Ed3hH-zGo_fhImP7xY7wqfSIT3cn-6jMbkFVwDb5nTwNPm-hD4K-Gfx07JhLywR9e_Eycr0jTJSV2aDT2QZRd_pmxRAH7NfHNFFkvo3IrD-ihg0_zfGT60iRUY-AH6HSWBahL4fs2XZRTYr_flDjih2A",
+    "results": [
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "873 백석동 Seobuk-gu, Cheonan-si, Chungcheongnam-do, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.8222783,
+                    "lng": 127.1250619
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.82362812989272,
+                        "lng": 127.1264117298927
+                    },
+                    "southwest": {
+                        "lat": 36.82092847010727,
+                        "lng": 127.1237120701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "백석동물병원",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2448,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/108109512554053844555\">ye jin Yang</a>"
+                    ],
+                    "photo_reference": "ATplDJbfDoQ7CS6vn41BrDNqGkAH8aRz9YyPRe3B9rxMF8INXeko2DhCWxzWAFan955sb5Ulc6-6Sw74UIbq2N1Af7JVkHkbJr6M2VKFvdCKDw2PeZvlds44Rx-NkD8_jBkKmj5gCCBI9jLylR_1ROvficTY0spnRFuiX0-wQ5pnsZ1iy811",
+                    "width": 3264
+                }
+            ],
+            "place_id": "ChIJPWmoTd8nezUR7NSeiS5qLsc",
+            "rating": 4.4,
+            "reference": "ChIJPWmoTd8nezUR7NSeiS5qLsc",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 24
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, Chungcheongnam-do, Cheonan-si, Seobuk-gu, 성성8로 4 2층 KR",
+            "geometry": {
+                "location": {
+                    "lat": 36.83951649999999,
+                    "lng": 127.1287868
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.84086632989272,
+                        "lng": 127.1301366298927
+                    },
+                    "southwest": {
+                        "lat": 36.83816667010727,
+                        "lng": 127.1274369701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "레이크동물의료센터",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 960,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/114370540473881689549\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJaZGHTCkGkauuIcFIWNnZ2NAWgXhlunD3i8fzXLt8mHYaVQ5m3xUXwJ6ZY0CPAmOJ7sHiYfIdPmVbbCd7Z8tvENsWu4_LCGiVET96TFnxmUHTATB9sUnUpI-rOTzNidyxDz3-z9a0Zk513EwqAJXyDwG-vgyhdTZQuNvsPVo4jqPtts",
+                    "width": 1440
+                }
+            ],
+            "place_id": "ChIJr1FyQqUpezURHn_FnKkZ7nA",
+            "rating": 4.8,
+            "reference": "ChIJr1FyQqUpezURHn_FnKkZ7nA",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 27
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "6 Bongjeong-ro, Bongmyeong-dong, Dongnam-gu, Cheonan-si, Chungcheongnam-do, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.8027493,
+                    "lng": 127.1394522
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.80409912989271,
+                        "lng": 127.1408020298927
+                    },
+                    "southwest": {
+                        "lat": 36.80139947010727,
+                        "lng": 127.1381023701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "치유동물병원",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 2276,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/100185724344014824879\">jung jin</a>"
+                    ],
+                    "photo_reference": "ATplDJZqQAXZmo0heCU4qdRNEXBg6PIAphM1n5aUngiM3jPZ8bGpx8xWgj6qCSMKg6FfL_b1XC7P2XUPW61sNtV_s5Jms-GfG_cWRGjIXtaGuoflXNDqs7O2r4-f97Xt4rneuK8hwCYbXIjZr_RBQ8neJJEGipvFOKBusPlj6eh10lqmqiIh",
+                    "width": 1536
+                }
+            ],
+            "place_id": "ChIJz6FgMYEpezUR1i4EvjMSdi8",
+            "rating": 4.7,
+            "reference": "ChIJz6FgMYEpezUR1i4EvjMSdi8",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 20
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, 서북구 백석동 9-3번지 이현빌딩 1층 천안시 충청남도 KR",
+            "geometry": {
+                "location": {
+                    "lat": 36.8241994,
+                    "lng": 127.1244898
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.82554922989272,
+                        "lng": 127.1258396298927
+                    },
+                    "southwest": {
+                        "lat": 36.82284957010727,
+                        "lng": 127.1231399701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "나우동물의료센터",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1000,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115105579597892502424\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJYXqOuCCiHtSf8Dgzo7PYgAbG1JVlYnPyU_7uDhx7E9P_fz6WnHVTwjJKK8Pgo91HXiiNUT-AuyTOCJc-mQqJmNJG-2KGuWN9GFBKEe50JOWVPCAPgaeWHB_bBqBkJONu11DRDmiUHc-msSmP2fKLURmv40G2hamd5ncaZJ-9wN1_I",
+                    "width": 1500
+                }
+            ],
+            "place_id": "ChIJR9Ap7dgnezURwYlVvcs8PRA",
+            "rating": 4.5,
+            "reference": "ChIJR9Ap7dgnezURwYlVvcs8PRA",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 70
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, Chungcheongnam-do, Cheonan-si, Seobuk-gu, 성정2동 1435 KR",
+            "geometry": {
+                "location": {
+                    "lat": 36.8258363,
+                    "lng": 127.1418482
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.82718612989272,
+                        "lng": 127.1431980298927
+                    },
+                    "southwest": {
+                        "lat": 36.82448647010728,
+                        "lng": 127.1404983701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "천안24시스카이동물메디컬센터",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 4032,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/107118188683288642445\">Mira Yoon</a>"
+                    ],
+                    "photo_reference": "ATplDJZwZQqG5qV8JX3H-y08ncDeiZkKFIuN9cVs5cYeA0bt3ycg3K90TPMRPzXYlEx-zzoWBdWAy3FSvV1-3xCHxwYfNBWGmo2bGJ_3XryYsJl0-S_4sBXM-mKFPN1vkzhKsqEbb3b1TVQbSli3BTjPIB1wBm4J4KjOiuvUdmxusBh8gpHp",
+                    "width": 3024
+                }
+            ],
+            "place_id": "ChIJ43Cdy3UpezURn9yT71UqI9w",
+            "rating": 4.3,
+            "reference": "ChIJ43Cdy3UpezURn9yT71UqI9w",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 37
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "344 Nambu-daero, Dongnam-gu, Cheonan-si, Chungcheongnam-do, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.7809998,
+                    "lng": 127.1549171
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.78234962989271,
+                        "lng": 127.1562669298927
+                    },
+                    "southwest": {
+                        "lat": 36.77964997010727,
+                        "lng": 127.1535672701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "가온동물병원",
+            "opening_hours": {},
+            "photos": [
+                {
+                    "height": 3963,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106744025122174771125\">Lee Yk</a>"
+                    ],
+                    "photo_reference": "ATplDJb8rsbuRKI1tbGrgHVGJSxfvJqKTGzyAzyfIdDGoFnNHsn4jAaMuKbMshpe6IaMTEOz0sYFm2p5uYV8QucCDWgriFIa1O3sBKu0iwxHK196yuCewFyKzBnuLxloU8nLM8aOJ85I64XnttDPCdtVFXCbX1jS71M-P-2OY3OywwiSxLVM",
+                    "width": 2972
+                }
+            ],
+            "place_id": "ChIJ42EcCinWejURSLs7fYlP9dE",
+            "rating": 4.7,
+            "reference": "ChIJ42EcCinWejURSLs7fYlP9dE",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 23
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, Chungcheongnam-do, Cheonan-si, Seobuk-gu, Buldang 7-gil, 25 KR 동물병원 닥터스",
+            "geometry": {
+                "location": {
+                    "lat": 36.8031138,
+                    "lng": 127.1120444
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.80446362989272,
+                        "lng": 127.1133942298927
+                    },
+                    "southwest": {
+                        "lat": 36.80176397010728,
+                        "lng": 127.1106945701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "동물병원 닥터스#동물병원#동물치과#건강검진",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 500,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/116690886188741683475\">Jang Steve</a>"
+                    ],
+                    "photo_reference": "ATplDJbktQj1Y0QK9KuMlqWY9fjdelS_0_ssu1rf9ybfMKppNd5AbgRb613fgFwIsiBVxRXAEreqcwVHIlUIiz1xuyC4A3yAnCPZ6FImXlskPHbrf4hU21ylSSjkdJ_Q_3XeJwHNys2AmmmmWv8pBMFfYmKyVOlTWWzHkjhTo2njjJuH8pDI",
+                    "width": 753
+                }
+            ],
+            "place_id": "ChIJ3SVgzgnYejURU5Lp8m6iXhk",
+            "rating": 4.7,
+            "reference": "ChIJ3SVgzgnYejURU5Lp8m6iXhk",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 31
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "113-276 Anjeong-ri, Pyeongtaek-si, Gyeonggi-do, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.9590575,
+                    "lng": 127.0431559
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.96040732989272,
+                        "lng": 127.0445057298927
+                    },
+                    "southwest": {
+                        "lat": 36.95770767010728,
+                        "lng": 127.0418060701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "강남동물병원 (KN Pet Hospital)",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/107405831651454955685\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJbnSw16_pEkkjbk5P_OeqMXZ93dwS8AykX8xMnEw9YJgfIaQZbwON_hzcP8CWwAwTRGnQvaVJfNQtOw5ehKfMLxO5JuDy7m9-zwD7DIRzxsm9JaZHjS8QIInLI0Mh86sUaJQ810TvITQsHd8i8-CW34mSpuGXcWd1C_h_uplK3iVgLR",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJgWWrIeElezURENPKIWG-rKg",
+            "plus_code": {
+                "compound_code": "X25V+J7 Pyeongtaek-si, Gyeonggi-do",
+                "global_code": "8Q89X25V+J7"
+            },
+            "rating": 3.9,
+            "reference": "ChIJgWWrIeElezURENPKIWG-rKg",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 52
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "1169 Ssangyong-dong, Seobuk-gu, Cheonan-si, Chungcheongnam-do, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.8020195,
+                    "lng": 127.1313648
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.80336932989273,
+                        "lng": 127.1327146298927
+                    },
+                    "southwest": {
+                        "lat": 36.80066967010729,
+                        "lng": 127.1300149701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "우리동물병원",
+            "photos": [
+                {
+                    "height": 961,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/109666310806450789744\">한다혜</a>"
+                    ],
+                    "photo_reference": "ATplDJa38zcXPYu_3Fm7RCdfsCwQIQDW9PSSFi1mUhqHSLoWeMP59nU7UxCVw0JG2wV6AtTURy9JmTOSGATiTTXVI8ecR15yCy_XHUWTjH5daDRyxcI1mwph2hLXqJeFyUB1QSMP1vWiJ13uBKoI6i20da9EXUnMwN6m3F5SqQrYDBiBHNic",
+                    "width": 720
+                }
+            ],
+            "place_id": "ChIJDVAoAwQoezURufkI-XuH_iw",
+            "rating": 4.6,
+            "reference": "ChIJDVAoAwQoezURufkI-XuH_iw",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 28
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "79 Buldang 22-daero, Buldang-dong, Seobuk-gu, Cheonan-si, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.8162861,
+                    "lng": 127.1076312
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.81763592989273,
+                        "lng": 127.1089810298927
+                    },
+                    "southwest": {
+                        "lat": 36.81493627010728,
+                        "lng": 127.1062813701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "나우동물메디컬센터",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1576,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/102753368896924505794\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJawYuGuwLP5CYm6jimO0-YnGB-iwUSinUgQYBqlYcxDrfQQcHZD02soMEsPNljjO_GdHFNYZyE6JYWpZO_-qt3qoaz2NVbX2PxHGIiA5WNQyABP8Y6AhhBBoCdywyLoJFnPfhXLw8gM5nHWdu6TTAN06D_UugfoscDQFdq-QbIKpZ4y",
+                    "width": 2925
+                }
+            ],
+            "place_id": "ChIJ665qyYgnezUR8TZdb--l4F8",
+            "rating": 4.1,
+            "reference": "ChIJ665qyYgnezUR8TZdb--l4F8",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 21
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "816 Sinbu-dong, Dongnam-gu, Cheonan-si, Chungcheongnam-do, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.819629,
+                    "lng": 127.158445
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.82097882989272,
+                        "lng": 127.1597948298927
+                    },
+                    "southwest": {
+                        "lat": 36.81827917010728,
+                        "lng": 127.1570951701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "에니펫동물병원",
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/103798826252907973014\">Sonia Knapp</a>"
+                    ],
+                    "photo_reference": "ATplDJYaEmm-NqP9ml_Pf_qqtSGIzF0-zBxY1VcCP1jOsbvfpfMPH-Z7Z3qffPLesuOlu7SxdeJwVg5zZNxr6MjBC-3QlVLsJ7ASmPiTYRPM0OAVjY0n50sKPp0zhOUjOdq6vvJXFeFUcUxdOCXiWsZ2gD7bLHcOmzRnQaSLQ_ORLslXfEKs",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJPe8jU1coezURCERihZMK2Dw",
+            "rating": 4.2,
+            "reference": "ChIJPe8jU1coezURCERihZMK2Dw",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 18
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "1517 Jangjae-ri, Baebang-eup, Asan-si, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.7891298,
+                    "lng": 127.0909544
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.79047962989272,
+                        "lng": 127.0923042298927
+                    },
+                    "southwest": {
+                        "lat": 36.78777997010728,
+                        "lng": 127.0896045701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "언제나동물병원",
+            "opening_hours": {},
+            "place_id": "ChIJJRH8-BvZejUR4HJUgQRqYTw",
+            "rating": 4.9,
+            "reference": "ChIJJRH8-BvZejUR4HJUgQRqYTw",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 14
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, Chungcheongnam-do, Asan-si, Tangjeong-myeon, Tangjeongmyeon-ro 22beon-gil, 15-5 해듬동물병원 1층",
+            "geometry": {
+                "location": {
+                    "lat": 36.7974399,
+                    "lng": 127.060214
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.79878972989272,
+                        "lng": 127.0615638298927
+                    },
+                    "southwest": {
+                        "lat": 36.79609007010728,
+                        "lng": 127.0588641701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "해듬동물병원",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 853,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/106944107656055543057\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJYnb2Au44TBd9JFbupWXo4fEsQvUr_4QCpiyRl46niD9VJa4UbQ4vl7JJayGZvzkQozbqEwVr41QORR-WVf__mRrkk5qkym5DaAox-WVye8VuWcWGN5WKV-W7QG6KOdT5ZCnPkbpbXRIhgntIpaEs4rzAmGsuE3bAq1iPmOgk32W7K8",
+                    "width": 1280
+                }
+            ],
+            "place_id": "ChIJTZoz68jZejURxRIX3zMIRJo",
+            "rating": 4.9,
+            "reference": "ChIJTZoz68jZejURxRIX3zMIRJo",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 8
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, Chungcheongnam-do, Cheonan-si, Seobuk-gu, Oseong 6-gil, 4 3층",
+            "geometry": {
+                "location": {
+                    "lat": 36.8319071,
+                    "lng": 127.1274891
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.83325692989271,
+                        "lng": 127.1288389298927
+                    },
+                    "southwest": {
+                        "lat": 36.83055727010727,
+                        "lng": 127.1261392701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "동물심장병원 진심#원장직접진료#건강검진#강아지,고양이심장병",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 4144,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/112654037847720394721\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJZ8snPWZ6CTp2z_e_pVcFVL6wAHjiv6sc5Kdfbo2YZoKMnNDHEj_jPzqKzIXYcm2A8kv2n1X2_11jikijapNCg3K1lcsbhRDVHnyV3VXKK5BlNnKCJzuLn_7tNHFpTdlViDomuvQ572pULnNd7DjSMqYcWbyYtUjPCqhYBu_Wh2uNJv",
+                    "width": 7360
+                }
+            ],
+            "place_id": "ChIJK4FuW0gpezURkVVsV_5c11A",
+            "rating": 5,
+            "reference": "ChIJK4FuW0gpezURkVVsV_5c11A",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 4
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, Gyeonggi-do, Pyeongtaek-si, Sinjang-dong, Songtangoga-gil, 51-2 KR 2(송탄고가길2",
+            "geometry": {
+                "location": {
+                    "lat": 37.0901643,
+                    "lng": 127.0540819
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 37.09151412989272,
+                        "lng": 127.0554317298927
+                    },
+                    "southwest": {
+                        "lat": 37.08881447010728,
+                        "lng": 127.0527320701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "Best Friends Veterinary Clinic & Grooming Salon",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 642,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/104051362253421834533\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJZ6GvXjnZKXNE3JHykwoP1Y4kJmeZL7HsVgUJC7uabm4UpkjzXL2gim4Hi8VYP5RFS9FeGugc6Zbrsx1T3Idzz7e7T8QF0lBlGeVe53LgibQT4Mi568HeUBdw_zuSCG7DltFGV1WEhVm9w-kXzclDbq8pXEfFlzKTkSpAA5XnX4k42L",
+                    "width": 960
+                }
+            ],
+            "place_id": "ChIJY_TNPhM5ezURo8Z6uCYOCis",
+            "plus_code": {
+                "compound_code": "33R3+3J Pyeongtaek-si, Gyeonggi-do",
+                "global_code": "8Q9933R3+3J"
+            },
+            "rating": 4.8,
+            "reference": "ChIJY_TNPhM5ezURo8Z6uCYOCis",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 61
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, 코리아동물병원 중앙로 141 평택시 경기도 KR",
+            "geometry": {
+                "location": {
+                    "lat": 36.99270380000001,
+                    "lng": 127.0987168
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.99405362989273,
+                        "lng": 127.1000666298927
+                    },
+                    "southwest": {
+                        "lat": 36.99135397010728,
+                        "lng": 127.0973669701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "COREA ANIMAL HOSPITAL 코리아동물병원",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 764,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/117245257894014014854\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJZLrDJgoetk85XNQm_rCoKPNckGeIPKfdFgCW4bbYPUGFOY5hrW5gbWIEpA_4tifOox8UixvjsTNQV24mWMmPR1amEfebWliHjur6-YhkxvhVWXcj7bxdiAIJmf5snkR8EKHd3MrBX2VIkIDO7qZ8H4aRVtdcbeCkforLH2RbnQQijl",
+                    "width": 990
+                }
+            ],
+            "place_id": "ChIJ5wx4efY6ezURiVzI2r4d0ck",
+            "plus_code": {
+                "compound_code": "X3VX+3F Pyeongtaek-si, Gyeonggi-do",
+                "global_code": "8Q89X3VX+3F"
+            },
+            "rating": 4.2,
+            "reference": "ChIJ5wx4efY6ezURiVzI2r4d0ck",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 67
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, Gyeonggi-do, Pyeongtaek-si, Bijeon-dong, Manse-ro, 1842 KR",
+            "geometry": {
+                "location": {
+                    "lat": 37.0046605,
+                    "lng": 127.1035561
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 37.00601032989272,
+                        "lng": 127.1049059298927
+                    },
+                    "southwest": {
+                        "lat": 37.00331067010728,
+                        "lng": 127.1022062701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "Bomnal Animal Medical Center",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/115132177927029019272\">송수웅</a>"
+                    ],
+                    "photo_reference": "ATplDJaWUCbeLMsPF54ZX7Os9pU0ycg2ddAPWuge-xDEuQpbsZuRw1SfC4merN8Vt1QPhFiPVnojz03QAiTcR9GGAO5YJOqZvW42VYcDo1iIj-0yETTyAnlFloQ7VFpNBOGAm_1MOmQu85tdiEaA3So0TlZZbUlieYsULSSdVh09BVkPvjMJ",
+                    "width": 3024
+                }
+            ],
+            "place_id": "ChIJTZgDXFc7ezURaxSSn7HQMbA",
+            "plus_code": {
+                "compound_code": "2433+VC Pyeongtaek-si, Gyeonggi-do",
+                "global_code": "8Q992433+VC"
+            },
+            "rating": 4.5,
+            "reference": "ChIJTZgDXFc7ezURaxSSn7HQMbA",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 91
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "69 Pyeongtaek-ro, Pyeongtaek-si, Gyeonggi-do, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.9930197,
+                    "lng": 127.0852817
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.99436952989272,
+                        "lng": 127.0866315298927
+                    },
+                    "southwest": {
+                        "lat": 36.99166987010727,
+                        "lng": 127.0839318701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "펫25시동물병원",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 3024,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/100827342631139258756\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJb6jgxw1Hb2NzubHa7bE1yb_PYSgq7i_d--izsictrxvY0lBsp42_id8KgeRWrXggGVesr1U-TIkxM5wo_WVDdiV51Bp6cS4IOrYENHNAjE2oudHuUUb-BshVAQuhBKghI8_aS0owHFv4TMG2okJD8TZAudtosuZBE-9eq8rfDLr9v5",
+                    "width": 4032
+                }
+            ],
+            "place_id": "ChIJU-iUrv06ezURfolT6sfz7DQ",
+            "plus_code": {
+                "compound_code": "X3VP+64 Pyeongtaek-si, Gyeonggi-do",
+                "global_code": "8Q89X3VP+64"
+            },
+            "rating": 4,
+            "reference": "ChIJU-iUrv06ezURfolT6sfz7DQ",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 69
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "2335 Sejong-ro, 조치원읍 Sejong-si, South Korea",
+            "geometry": {
+                "location": {
+                    "lat": 36.595582,
+                    "lng": 127.290771
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.59693182989272,
+                        "lng": 127.2921208298927
+                    },
+                    "southwest": {
+                        "lat": 36.59423217010728,
+                        "lng": 127.2894211701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "The Kind Animal Hospital",
+            "opening_hours": {
+                "open_now": true
+            },
+            "photos": [
+                {
+                    "height": 1986,
+                    "html_attributions": [
+                        "<a href=\"https://maps.google.com/maps/contrib/110465062472140287265\">A Google User</a>"
+                    ],
+                    "photo_reference": "ATplDJbsR47_v_IOTFQRhZKrGvjdnbdodV1wvKrxWdtV3Y46Tm79P-1sqk7aeZQxvvf-a6BmHu3spI0DQ4ef-nNi1iXnXaABLCM3SPo0IahHGB93KXDm0t-bA_6ZxN8GCv2LQz7uh0s7un71sWKApZEG0dt60SYgH6B0oU4Y_fZ7J5oza8A4",
+                    "width": 1985
+                }
+            ],
+            "place_id": "ChIJd1b1la7SejURkbCElu20n3Y",
+            "plus_code": {
+                "compound_code": "H7WR+68 Sejong-si",
+                "global_code": "8Q89H7WR+68"
+            },
+            "rating": 4.7,
+            "reference": "ChIJd1b1la7SejURkbCElu20n3Y",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 46
+        },
+        {
+            "business_status": "OPERATIONAL",
+            "formatted_address": "South Korea, Chungcheongnam-do, Asan-si, Baebang-eup, Wolcheon 6-gil, 9 1층",
+            "geometry": {
+                "location": {
+                    "lat": 36.7708332,
+                    "lng": 127.0758702
+                },
+                "viewport": {
+                    "northeast": {
+                        "lat": 36.77218302989272,
+                        "lng": 127.0772200298927
+                    },
+                    "southwest": {
+                        "lat": 36.76948337010727,
+                        "lng": 127.0745203701073
+                    }
+                }
+            },
+            "icon": "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/generic_business-71.png",
+            "icon_background_color": "#7B9EB0",
+            "icon_mask_base_uri": "https://maps.gstatic.com/mapfiles/place_api/icons/v2/generic_pinlet",
+            "name": "하나동물의료센터",
+            "opening_hours": {
+                "open_now": true
+            },
+            "place_id": "ChIJ0SBdRhfZejURPYbJZZfjnao",
+            "rating": 4.6,
+            "reference": "ChIJ0SBdRhfZejURPYbJZZfjnao",
+            "types": [
+                "veterinary_care",
+                "point_of_interest",
+                "establishment"
+            ],
+            "user_ratings_total": 5
+        }
+    ],
+    "status": "OK"
+}
