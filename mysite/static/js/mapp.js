@@ -1,9 +1,9 @@
 function initMap() {
     // Create the map.
-    const pyrmont = { lat: -33.866, lng: 151.196 };
+    const curLocation = { lat: 36.8, lng: 127.1 };
     const map = new google.maps.Map(document.getElementById("map"), {
-      center: pyrmont,
-      zoom: 17,
+      center: curLocation,
+      zoom: 14,
       mapId: "8d193001f940fde3",
     });
     // Create the places service.
@@ -20,7 +20,7 @@ function initMap() {
   
     // Perform a nearby search.
     service.nearbySearch(
-      { location: pyrmont, radius: 500, type: "store" },
+      { location: curLocation, radius: 5000, type: "hospital" },
       (results, status, pagination) => {
         if (status !== "OK" || !results) return;
   
@@ -59,6 +59,7 @@ function initMap() {
         const li = document.createElement("li");
   
         li.textContent = place.name;
+        li.classList.add("hospitalsidebar");
         placesList.appendChild(li);
         li.addEventListener("click", () => {
           map.setCenter(place.geometry.location);

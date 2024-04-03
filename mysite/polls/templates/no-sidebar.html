@@ -11,6 +11,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/index.css' %}" />
         <style>
             @font-face {
                 font-family: 'NPSfontBold';
@@ -62,7 +63,7 @@
                                     <!-- Content -->
 
                                         <article class="box page-content">
-
+                                            <!--
                                             <header>
                                                 <h2>No Sidebar</h2>
                                                 <p>Semper amet scelerisque metus faucibus morbi congue mattis</p>
@@ -71,19 +72,20 @@
                                                     <li class="icon fa-comments"><a href="#">1,024</a></li>
                                                 </ul>
                                             </header>
-
+                                            -->
                                             <section>
                                                 <span class="image featured"><img src="{% static 'images/pic05.jpg' %}" alt="" /></span>
                                                 <iframe
-  width="100%"
-  height="500"
-  style="border:0"
-  loading="lazy"
-  allowfullscreen
-  referrerpolicy="no-referrer-when-downgrade"
-  src="https://www.google.com/maps/embed/v1/search?key={{ google_maps_api_key }}
-    &q=동물병원">
-</iframe>
+                                                    width="100%"
+                                                    height="500"
+                                                    style="border:0"
+                                                    loading="lazy"
+                                                    allowfullscreen
+                                                    referrerpolicy="no-referrer-when-downgrade"
+                                                    src="https://www.google.com/maps/embed/v1/search?key={{ google_maps_api_key }}
+                                                        &q=동물병원">
+                                                </iframe>
+                                            
                                                 
                                                 <p>
                                                     Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus.
@@ -91,7 +93,18 @@
                                                     Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
                                                     consequat etiam lorem ipsum dolor sit amet nullam.
                                                 </p>
+                                                <div>
+                                                    <div id="container">
+                                                        <div id="map"></div>
+                                                        <div id="sidebar">
+                                                          <h3>Results</h3>
+                                                          <ul id="places"></ul>
+                                                          <button id="more">Load more results</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
 
+                                                <!--
                                                 <div class="test_content">
                                                     <h1 class="content_title">google_map</h1>
                                                     <button type="button" id="map_button">이동하기</button>
@@ -112,19 +125,17 @@
                                                         <button id="more">Load more results</button>
                                                     </div>
                                                 </div>
-
+                                                -->
                                             </section>
-                                </div>
-                            </div>
-                                                <div class="col-12">
-                                                    <ul class="actions">
-                                                        <li><a href="{% url 'index' %}" class="button large">Home</a></li>
-                                                     </ul>
-                                                </div>
-                                            </div>
+                                        </article>
+                            
+                                        <div class="col-12">
+                                            <ul class="actions">
+                                                <li><a href="{% url 'index' %}" class="button large">Home</a></li>
+                                                </ul>
                                         </div>
-                                    </section>
 
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -137,32 +148,29 @@
                             <div class="col-12">
 
                                 <!-- About -->
-                           <section>
-                            <h2 class="major"><span>Walness about?</span></h2>
-                            <p>
-                               저희는 <strong>왈니스</strong>팀 입니다. 최근 반려동물을 키우는 가구가 늘어나고 있고
-                               이러한 사회적 영향을 고려하여, 우리 서비스는 반려동물 보호자들이 시간과 장소에 구애받지 않고, 반려견의 안구질환을 예측하는데 목적을 두고 있습니다. :)
-                            </p>
-                         </section>
+                                <section>
+                                    <h2 class="major"><span>Walness about?</span></h2>
+                                    <p>
+                                    저희는 <strong>왈니스</strong>팀 입니다. 최근 반려동물을 키우는 가구가 늘어나고 있고
+                                    이러한 사회적 영향을 고려하여, 우리 서비스는 반려동물 보호자들이 시간과 장소에 구애받지 않고, 반려견의 안구질환을 예측하는데 목적을 두고 있습니다. :)
+                                    </p>
+                                </section>
 
-                   </div>
-                   <div class="col-12">
+                            </div>
+                            <div class="col-12">
 
-                      <!-- Contact -->
-                         <section>
-                            <h2 class="major"><span>Get in touch</span></h2>
-                            <ul class="contact">
-                               <li><a class="icon brands fa-instagram" href="https://www.instagram.com/yuhengsa?igsh=c2U4ZGQzZWJoYTk0"><span class="label">Instagram</span></a></li>
-                            </ul>
-                         </section>
-
-                   </div>
-                </div>
-
-             </div>
-          </footer>
-
-    </div>
+                                <!-- Contact -->
+                                <section>
+                                    <h2 class="major"><span>Get in touch</span></h2>
+                                    <ul class="contact">
+                                    <li><a class="icon brands fa-instagram" href="https://www.instagram.com/yuhengsa?igsh=c2U4ZGQzZWJoYTk0"><span class="label">Instagram</span></a></li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+        </div>
 
     <!-- Scripts -->
        <script src="{% static 'js/jquery.min.js' %}"></script>
@@ -173,6 +181,10 @@
        <script src="{% static 'js/util.js' %}"></script>
        <script src="{% static 'js/main.js' %}"></script>
        <script src="{% static 'js/mapp.js' %}" defer></script>
-
+       <script
+        src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initMap&libraries=places&v=weekly"
+        defer
+       >
+       </script>
  </body>
 </html>
