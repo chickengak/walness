@@ -26,7 +26,10 @@
                 font-family: 'NPSfontBold', sans-serif;
             }
 		</style>
+
+    
     </head>
+
     <body class="is-preload">
         <div id="page-wrapper">
 
@@ -88,6 +91,28 @@
                                                     Aliquam luctus et mattis lectus sit amet pulvinar. Nam turpis nisi
                                                     consequat etiam lorem ipsum dolor sit amet nullam.
                                                 </p>
+
+                                                <div class="test_content">
+                                                    <h1 class="content_title">google_map</h1>
+                                                    <button type="button" id="map_button">이동하기</button>
+                                                    <div id="map" style="width: 50%; height: 400px;"></div>
+                                                    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initMap&region=kr"></script>
+                                                </div>
+
+                                                <div class="main_content">
+                                                    <h1 class="content_title">google_map</h1>
+                                                    <button type="button" id="map_button">이동하기</button>
+                                                    <div id="map" style ="flex-basis: 0;
+                                                    flex-grow: 4;
+                                                    height: 100%;"></div>
+                                                    <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}&callback=initMap&region=kr"></script>
+                                                    <div id="sidebar">
+                                                        <h2>Results</h2>
+                                                        <ul id="places"></ul>
+                                                        <button id="more">Load more results</button>
+                                                    </div>
+                                                </div>
+
                                             </section>
                                 </div>
                             </div>
@@ -147,6 +172,7 @@
        <script src="{% static 'js/breakpoints.min.js' %}"></script>
        <script src="{% static 'js/util.js' %}"></script>
        <script src="{% static 'js/main.js' %}"></script>
+       <script src="{% static 'js/mapp.js' %}" defer></script>
 
  </body>
 </html>
