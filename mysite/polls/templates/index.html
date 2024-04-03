@@ -90,25 +90,7 @@
                 <nav id="nav">
                     <ul>
                         <li class="current"><a href="{% url 'index' %}">Home</a></li>
-                        <li>
-                            <a href="#">Dropdown</a>
-                            <ul>
-                                <li><a href="#">Lorem ipsum dolor</a></li>
-                                <li><a href="#">Magna phasellus</a></li>
-                                <li>
-                                    <a href="#">Phasellus consequat</a>
-                                    <ul>
-                                        <li><a href="#">Lorem ipsum dolor</a></li>
-                                        <li><a href="#">Phasellus consequat</a></li>
-                                        <li><a href="#">Magna phasellus</a></li>
-                                        <li><a href="#">Etiam dolore nisl</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="#">Veroeros feugiat</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="{% url 'left_sidebar_view' %}">Left Sidebar</a></li>
-                        <li><a href="{% url 'right_sidebar_view' %}">Right Sidebar</a></li>
+                        <li><a href="{% url 'left_sidebar_view' %}">왈니스를 소개합니다</a></li>
                         <li><a href="{% url 'no_sidebar_view' %}">No Sidebar</a></li>
                     </ul>
                 </nav>
@@ -171,19 +153,6 @@
 
                                                     <!-- Feature -->
                                                         <section class="box feature">
-                                                            <a href="#" class="image featured"><img src="{% static 'images/동물병원지도1.png' %}" alt="" /></a>
-                                                            <h3><a href="#">동물병원은 어디에?</a></h3>
-                                                            <p>
-                                                                Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
-                                                                lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
-                                                            </p>
-                                                        </section>
-
-                                                </div>
-                                                <div class="col-3 col-6-medium col-12-small">
-
-                                                    <!-- Feature -->
-                                                        <section class="box feature">
                                                             <a href="#" class="image featured"><img src="{% static 'images/walness_cam.png' %}" alt="" /></a>
                                                             <h3><a href="#">이렇게 이용해요!</a></h3>
                                                             <p>
@@ -206,10 +175,23 @@
                                                         </section>
 
                                                 </div>
+                                                <div class="col-3 col-6-medium col-12-small">
+
+                                                    <!-- Feature -->
+                                                        <section class="box feature">
+                                                            <a href="#" class="image featured"><img src="{% static 'images/동물병원지도1.png' %}" alt="" /></a>
+                                                            <h3><a href="#">동물병원은 어디에?</a></h3>
+                                                            <p>
+                                                                Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in
+                                                                lectus dolore. Praesent semper mod quis eget sed etiam eu ante risus.
+                                                            </p>
+                                                        </section>
+
+                                                </div>
                                                 <div class="col-12">
                                                     <ul class="actions">
-                                                        <li><a href="#" class="button large">Do Something</a></li>
-                                                        <li><a href="{% url 'left_sidebar_view' %}" class="button alt large">Think About It</a></li>
+                                                        <li><a href="{% url 'left_sidebar_view' %}" class="button large">왈니스팀 소개</a></li>
+                                                        <li><a href="{% url 'no_sidebar_view' %}" class="button alt large">동물병원 찾기</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -218,97 +200,6 @@
 
                             </div>
                             <div class="col-12">
-
-                                <!-- Blog -->
-                                    <section class="box blog">
-                                        <h2 class="major"><span>Another Major Heading</span></h2>
-                                        <div>
-                                            <div class="row">
-                                                <div class="col-9 col-12-medium">
-                                                    <div class="content">
-
-                                                        <!-- Featured Post -->
-                                                            <article class="box post">
-                                                                <header>
-                                                                    <h3><a href="#">Here's a really big heading</a></h3>
-                                                                    <p>With a smaller subtitle that attempts to elaborate</p>
-                                                                    <ul class="meta">
-                                                                        <li class="icon fa-clock">15 minutes ago</li>
-                                                                        <li class="icon fa-comments"><a href="#">8</a></li>
-                                                                    </ul>
-                                                                </header>
-                                                                <a href="#" class="image featured"><img src="{% static 'images/pic05.jpg' %}" alt="" /></a>
-                                                                <p>
-                                                                    Phasellus quam turpis, feugiat sit amet ornare in, a hendrerit in lectus. Praesent
-                                                                    semper mod quis eget mi. Etiam sed ante risus aliquam erat et volutpat. Praesent a
-                                                                    dapibus velit. Curabitur sed nisi nunc, accumsan vestibulum lectus. Lorem ipsum
-                                                                    dolor sit non aliquet sed, tempor et dolor. Praesent a dapibus velit. Curabitur
-                                                                    accumsan.
-                                                                </p>
-                                                                <a href="#" class="button">Continue Reading</a>
-                                                            </article>
-
-                                                    </div>
-                                                </div>
-                                                <div class="col-3 col-12-medium">
-                                                    <div class="sidebar">
-
-                                                        <!-- Archives -->
-                                                            <ul class="divided">
-                                                                <li>
-                                                                    <article class="box post-summary">
-                                                                        <h3><a href="#">A Subheading</a></h3>
-                                                                        <ul class="meta">
-                                                                            <li class="icon fa-clock">6 hours ago</li>
-                                                                            <li class="icon fa-comments"><a href="#">34</a></li>
-                                                                        </ul>
-                                                                    </article>
-                                                                </li>
-                                                                <li>
-                                                                    <article class="box post-summary">
-                                                                        <h3><a href="#">Another Subheading</a></h3>
-                                                                        <ul class="meta">
-                                                                            <li class="icon fa-clock">9 hours ago</li>
-                                                                            <li class="icon fa-comments"><a href="#">27</a></li>
-                                                                        </ul>
-                                                                    </article>
-                                                                </li>
-                                                                <li>
-                                                                    <article class="box post-summary">
-                                                                        <h3><a href="#">And Another</a></h3>
-                                                                        <ul class="meta">
-                                                                            <li class="icon fa-clock">Yesterday</li>
-                                                                            <li class="icon fa-comments"><a href="#">184</a></li>
-                                                                        </ul>
-                                                                    </article>
-                                                                </li>
-                                                                <li>
-                                                                    <article class="box post-summary">
-                                                                        <h3><a href="#">And Another</a></h3>
-                                                                        <ul class="meta">
-                                                                            <li class="icon fa-clock">2 days ago</li>
-                                                                            <li class="icon fa-comments"><a href="#">286</a></li>
-                                                                        </ul>
-                                                                    </article>
-                                                                </li>
-                                                                <li>
-                                                                    <article class="box post-summary">
-                                                                        <h3><a href="#">And One More</a></h3>
-                                                                        <ul class="meta">
-                                                                            <li class="icon fa-clock">3 days ago</li>
-                                                                            <li class="icon fa-comments"><a href="#">8,086</a></li>
-                                                                        </ul>
-                                                                    </article>
-                                                                </li>
-                                                            </ul>
-                                                            <a href="#" class="button alt">Archives</a>
-
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </section>
-
                             </div>
                         </div>
                     </div>
@@ -321,16 +212,13 @@
                             <div class="col-12">
 
                                 <!-- About -->
-                                    <section>
-                                        <h2 class="major"><span>What's this about?</span></h2>
-                                        <p>
-                                            This is <strong>TXT</strong>, yet another free responsive site template designed by
-                                            <a href="http://twitter.com/ajlkn">AJ</a> for <a href="http://html5up.net">HTML5 UP</a>. It's released under the
-                                            <a href="http://html5up.net/license/">Creative Commons Attribution</a> license so feel free to use it for
-                                            whatever you're working on (personal or commercial), just be sure to give us credit for the design.
-                                            That's basically it :)
-                                        </p>
-                                    </section>
+                                <section>
+                                    <h2 class="major"><span>Walness about?</span></h2>
+                                    <p>
+                                       저희는 <strong>왈니스</strong>팀 입니다. 최근 반려동물을 키우는 가구가 늘어나고 있고
+                                       이러한 사회적 영향을 고려하여, 우리 서비스는 반려동물 보호자들이 시간과 장소에 구애받지 않고, 반려견의 안구질환을 예측하는데 목적을 두고 있습니다. :)
+                                    </p>
+                                 </section>
 
                             </div>
                             <div class="col-12">
@@ -339,24 +227,12 @@
                                     <section>
                                         <h2 class="major"><span>Get in touch</span></h2>
                                         <ul class="contact">
-                                            <li><a class="icon brands fa-facebook-f" href="#"><span class="label">Facebook</span></a></li>
-                                            <li><a class="icon brands fa-twitter" href="#"><span class="label">Twitter</span></a></li>
-                                            <li><a class="icon brands fa-instagram" href="#"><span class="label">Instagram</span></a></li>
-                                            <li><a class="icon brands fa-dribbble" href="#"><span class="label">Dribbble</span></a></li>
-                                            <li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
+                                            <li><a class="icon brands fa-instagram" href="https://www.instagram.com/yuhengsa?igsh=c2U4ZGQzZWJoYTk0"><span class="label">Instagram</span></a></li>
                                         </ul>
                                     </section>
 
                             </div>
                         </div>
-
-                        <!-- Copyright -->
-                            <div id="copyright">
-                                <ul class="menu">
-                                    <li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-                                </ul>
-                            </div>
-
                     </div>
                 </footer>
 
