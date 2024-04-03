@@ -17,7 +17,7 @@ import json
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-file_path = "./keys.json"
+file_path = "./static/keys.json"
 with open(file_path, 'r') as file:
     keys = json.load(file)
 
