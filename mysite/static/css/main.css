@@ -2495,7 +2495,7 @@ input, select, textarea {
 			background-repeat: repeat, no-repeat;
 			text-align: center;
 			margin: 0;
-			padding: 4em 0 3.5em 0;
+			padding: 2em 0 1.5em 0;
 		}
 
 			#banner .content h2 {
@@ -2514,6 +2514,21 @@ input, select, textarea {
 				margin: 0 0 1.25em 0;
 			}
 
+			#banner .content .how-to-container {
+				text-align : center;
+				display: block;
+				font-family: 'Open Sans Condensed', sans-serif;
+				text-transform: uppercase;
+				color: #575d59;
+				font-size: 0.95em;
+				margin: 0 10em 1.25em 10em;
+			}
+
+			#banner .content .how-to-container p {
+				margin : 5px 0;			
+			}
+
+
 			#banner .content .button {
 				-moz-transition: border-color .2s ease-in-out, color .2s ease-in-out;
 				-webkit-transition: border-color .2s ease-in-out, color .2s ease-in-out;
@@ -2523,7 +2538,7 @@ input, select, textarea {
 				background: transparent !important;
 				border: solid 4px #575d59;
 				border-color: rgba(87, 93, 89, 0.35);
-				font-size: 1.5em;
+				font-size: 0.8em;
 			}
 
 				#banner .content .button:hover {
@@ -2533,7 +2548,7 @@ input, select, textarea {
 
 				#banner .content .button:active {
 					color: #fff;
-					border-color: #616763;
+					border-color: #58A399;
 				}
 
 /* Main */
