@@ -1,3 +1,5 @@
+let globalSortBy = "Init";
+
 function initMap() {
   // Create the map.
   const curLocation = { lat: 36.8, lng: 127.1 };
@@ -53,25 +55,10 @@ function initMap() {
     );
   }
 
-
   // Perform a nearby search.
-  service.nearbySearch(
-    { location: curLocation, radius: 5000, type: "veterinary_care" },
-    (results, status, pagination) => {
-      if (status !== "OK" || !results) return;
+  searchAndDisplayPlaces('distance');
 
-      //globalResults = results;
-      addPlaces(results, map, 'distance');
-      moreButton.disabled = !pagination || !pagination.hasNextPage;
-      if (pagination && pagination.hasNextPage) {
-        getNextPage = () => {
-          // Note: nextPage will call the same handler function as the initial call
-          pagination.nextPage();
-        };
-      }
-    },
-  );
-
+  
   let currentInfoWindow = null;
 
   function closePreviousPopup() {
@@ -117,11 +104,16 @@ function initMap() {
             title: place.name,
             position: place.geometry.location,
           });
-  
+
           const distanceInKm = (place.distance / 1000).toFixed(1); // 거리를 km 단위로 반올림(소수 첫째 자리까지)
+          
+          const p = document.createElement("div");
+          p.textContent = '★' + place.rating + '　' + `(${distanceInKm}km)`;
+
           const li = document.createElement("li");
-          li.textContent = `${place.name} (${distanceInKm}km)`;
+          li.textContent = `${place.name}`;
           li.classList.add("hospitalsidebar");
+          li.appendChild(p);
           placesList.appendChild(li);
           li.addEventListener("click", () => {
             // 이전 팝업 닫기
@@ -164,7 +156,7 @@ function initMap() {
   
           // appending rating in p tag
           const p = document.createElement("div");
-          p.textContent = '★ ' + place.rating;
+          p.textContent = '★ ' + place.rating + '    ' ;
   
           const li = document.createElement("li");
   
@@ -183,6 +175,12 @@ function initMap() {
             });
             infoWindow.open(map, marker);
             currentInfoWindow = infoWindow;
+
+            // li 태그들에서 active 클래스 제거하고, 현재 클릭한 li만 active 클래스 추가함. 그리고 css가 스타일을 추가한다.
+            document.querySelectorAll('.hospitalsidebar').forEach(item => {
+              item.classList.remove('active');
+            });
+            li.classList.add('active');
           });
         }
       }

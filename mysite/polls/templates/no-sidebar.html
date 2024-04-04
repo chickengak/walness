@@ -23,7 +23,7 @@
             
             /* 원하는 요소에 폰트 적용 */
             h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-            h1, h2, h3, h4, h5, h6, p, a {
+            h1, h2, h3, h4, h5, h6, p, a, li{
                 font-family: 'NPSfontBold', sans-serif;
             }
 		</style>
@@ -97,10 +97,12 @@
                                                     <div id="container">
                                                         <div id="map"></div>
                                                         <div id="sidebar">
-                                                          <button id="results1">Results1 (Distance)</button>
-                                                          <button id="results2">Results2 (Rating)</button>
+                                                          <div>
+                                                          <button id="results1" class="sorting">거리 순으로</br>보기 ↓</button>
+                                                          <button id="results2" class="sorting">별점 순으로</br>보기 ↓</button>
+                                                          </div>
                                                           <ul id="places"></ul>
-                                                          <button id="more">Load more results</button>
+                                                          <button id="more" class="moreresults">검색 결과 더보기</button>
                                                         </div>
                                                     </div>
                                                 </div>

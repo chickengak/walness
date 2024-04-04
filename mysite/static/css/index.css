@@ -14,7 +14,7 @@ body {
 #sidebar {
   flex-basis: 5rem;
   flex-grow: 1;
-  padding: 1rem;
+  padding: 0rem 0rem 1rem 1rem;
   max-width: 30rem;
   height: 530px;
   box-sizing: border-box;
@@ -49,7 +49,7 @@ ul {
 
 li.hospitalsidebar {
   background-color: #f1f1f1;
-  padding: 10px;
+  padding: 10px 10px 5px 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
@@ -57,12 +57,16 @@ li.hospitalsidebar {
   cursor: pointer;
 }
 
+li.hospitalsidebar > div {
+  font-size: 1rem;
+}
+
 li.hospitalsidebar:nth-child(odd) {
   background-color: #fcfcfc;
 }
 
 li.hospitalsidebar.active {
-  background-color: #4285F4; /* Google Blue */
+  background-color: #496989; /*#4285F4;  Google Blue */
   color: white;
 }
 
@@ -77,12 +81,32 @@ button {
   border: none;
 }
 
-button:hover {
+/* button:hover {
   color: #c5d4f0;
-}
+} */
 
 button:disabled {
   background-color: #9fc1ee;
   color: #c5d4f0;
   cursor: auto;
+}
+
+button.sorting {
+  display: inline-block;
+  width: 49%;
+  background-color: #58A399;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+button.moreresults {
+  background-color: #A8CD9F;
+}
+
+button.moreresults:hover {
+  background-color: #88aa80;
 }
