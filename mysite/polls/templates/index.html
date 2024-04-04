@@ -119,11 +119,11 @@
                             <p class = "how-to-container">사진의 중앙에 우리아이 눈이 올 수 있도록 위치하고 사진을 찍은 뒤, 업로드하면 완료! </p>
                         </div>
                         <!-- 이미지 첨부할 공간 -->
-                        <form class="inputImg" method="post" enctype="multipart/form-data" style="display: block; margin: 0 auto; margin-bottom: 50px;">                            
-                            <div class="addImage" id="image-show"> <!-- 이미지 띄울 공간 -->
-                            </div>
-                            <input type="file" accept="image/*" onchange="loadFile(this)">
-                        </form>
+<form class="inputImg" method="post" enctype="multipart/form-data" style="display: block; margin: 0 auto; margin-bottom: 50px;">
+    <div class="addImage" id="image-show"> <!-- 이미지 띄울 공간 -->
+    </div>
+    <input type="file" accept="image/*" onchange="loadFile(this)">
+</form>
 
                         <a href="#main" class="button scrolly">Submit</a>
                        
@@ -137,22 +137,11 @@
                             <div class="col-12">
 
                                 <!-- Highlight -->
-                                    <section class="box highlight">
-                                        <ul class="special">
-                                            <li><a href="#" class="icon solid fa-search"><span class="label">Magnifier</span></a></li>
-                                            <li><a href="#" class="icon solid fa-tablet-alt"><span class="label">Tablet</span></a></li>
-                                            <li><a href="#" class="icon solid fa-flask"><span class="label">Flask</span></a></li>
-                                            <li><a href="#" class="icon solid fa-cog"><span class="label">Cog?</span></a></li>
-                                        </ul>
-                                        <header>
-                                            <h2>A random assortment of icons in circles</h2>
-                                            <p>And some text that attempts to explain their significance</p>
-                                        </header>
-                                        <p>
-                                            Phasellus quam turpis, feugiat sit amet ornare in, hendrerit in lectus. Praesent semper mod quis eget mi. Etiam eu<br />
-                                            ante risus. Aliquam erat volutpat. Aliquam luctus et mattis lectus amet pulvinar. Nam nec turpis consequat.
-                                        </p>
-                                    </section>
+                                <section class="box highlight">
+                                    <ul class="special">
+                                        <li id="image-container"><img src="#" alt=""></li>
+                                    </ul>
+                                </section>
 
                             </div>
                             <div class="col-12">
@@ -285,6 +274,19 @@
                     container.appendChild(newImage);
                 }
         </script>
+        <script>
+            function loadFile(input) {
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+                    reader.onload = function(e) {
+                        var imageContainer = document.getElementById('image-container');
+                        imageContainer.innerHTML = '<img src="' + e.target.result + '" alt="Uploaded Image">';
+                    };
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+        </script>
+        
 
     </body>
 </html>
