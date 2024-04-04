@@ -7,6 +7,12 @@ function initMap() {
     mapId: "8d193001f940fde3",
   });
 
+  const marker = new google.maps.Marker({
+    position: curLocation,
+    map: map,
+    title: "Your Location",
+  });
+
   // Create the places service.
   const service = new google.maps.places.PlacesService(map);
   let getNextPage;
@@ -111,6 +117,12 @@ function initMap() {
           placesList.appendChild(li);
           li.addEventListener("click", () => {
             map.setCenter(place.geometry.location);
+
+            // li 태그들에서 active 클래스 제거하고, 현재 클릭한 li만 active 클래스 추가함. 그리고 css가 스타일을 추가한다.
+            document.querySelectorAll('.hospitalsidebar').forEach(item => {
+              item.classList.remove('active');
+            });
+            li.classList.add('active');
           });
         }
       }
