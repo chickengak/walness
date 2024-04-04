@@ -1,6 +1,20 @@
-function initMap() {
-  // Create the map.
-  const curLocation = { lat: 36.8, lng: 127.1 };
+  // current position
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(initMap, error);
+  } else {
+    showError("Your browser does not support Geolocation!");
+  }
+
+  function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+  }
+
+ function initMap(pos) {
+  var lat = pos.coords.latitude;
+  var lng = pos.coords.longitude;
+
+  var curLocation = new google.maps.LatLng(parseFloat(lat),parseFloat(lng)); //{ lat: 36.8, lng: 127.1 };
+ // Create the map.
   const map = new google.maps.Map(document.getElementById("map"), {
     center: curLocation,
     zoom: 14,
