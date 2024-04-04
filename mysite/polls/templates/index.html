@@ -57,6 +57,20 @@
                 height: auto; /* 가로 비율에 맞춰 세로 비율 조정 */
                 /* margin-top: 30px;  이미지 아래 여백 추가 */
             }
+            /*이미지 업로드 창*/
+            .addImage {
+                width: 200px;
+                height: 150px;
+                background-color: lightgray;
+                border-radius: 20px 20px / 20px 20px;
+                overflow: hidden;
+                margin: 0px 10px 10px 0px;
+            }
+    
+            .inputImg {
+                width: 200px;
+                height: 150px;
+            }
         </style>
     </head>
     <body class="homepage is-preload">
@@ -96,15 +110,23 @@
                 </nav>
 
             <!-- Banner -->
-                <section id="banner">
-                    <div class="content">
+                <section id="banner" >
+                    <div class="content" >
                         <h2>Walness🐾</h2>
                         <p>무심코 발견한 우리 강아지 눈의 이상 징후,  왈니스로 한번 체크해보세요 !</p>
                         <div class="how-to-container">
                             <p class = "how-to-container">왈니스를 이용하기 위해서는 사진을 업로드해주세요.</p>
                             <p class = "how-to-container">사진의 중앙에 우리아이 눈이 올 수 있도록 위치하고 사진을 찍은 뒤, 업로드하면 완료! </p>
-                        </div>                        
+                        </div>
+                        <!-- 이미지 첨부할 공간 -->
+                        <form class="inputImg" method="post" enctype="multipart/form-data" style="display: block; margin: 0 auto; margin-bottom: 50px;">                            
+                            <div class="addImage" id="image-show"> <!-- 이미지 띄울 공간 -->
+                            </div>
+                            <input type="file" accept="image/*" onchange="loadFile(this)">
+                        </form>
+
                         <a href="#main" class="button scrolly">Submit</a>
+                       
                     </div>
                 </section>
 
@@ -246,6 +268,23 @@
             <script src="{% static 'js/breakpoints.min.js' %}"></script>
             <script src="{% static 'js/util.js' %}"></script>
             <script src="{% static 'js/main.js' %}"></script>
+            <script>
+                function loadFile(input) {
+                    let file = input.files[0]; // 선택파일 가져오기
+        
+                    let newImage = document.createElement("img"); //새 이미지 태그 생성
+        
+                    //이미지 source 가져오기
+                    newImage.src = URL.createObjectURL(file);
+                    newImage.style.width = "100%"; //div에 꽉차게 넣으려고
+                    newImage.style.height = "100%";
+                    newImage.style.objectFit = "cover"; // div에 넘치지 않고 들어가게
+        
+                    //이미지를 image-show div에 추가
+                    let container = document.getElementById('image-show');
+                    container.appendChild(newImage);
+                }
+        </script>
 
     </body>
 </html>
