@@ -11,6 +11,8 @@ function initMap() {
   const service = new google.maps.places.PlacesService(map);
   let getNextPage;
   const moreButton = document.getElementById("more");
+  const results1Button = document.getElementById("results1");
+  const results2Button = document.getElementById("results2");
 
   moreButton.onclick = function () {
     moreButton.disabled = true;
@@ -19,13 +21,41 @@ function initMap() {
     }
   };
 
+  
+  results1Button.onclick = function () {
+    searchAndDisplayPlaces('distance');
+  };
+
+  results2Button.onclick = function () {
+    searchAndDisplayPlaces('rating');
+  };
+
+  function searchAndDisplayPlaces(sortBy) {
+    service.nearbySearch(
+      { location: curLocation, radius: 5000, type: "veterinary_care" },
+      (results, status, pagination) => {
+        if (status !== "OK" || !results) return;
+        
+        //globalResults = results; // 검색 결과를 전역 변수에 저장
+        addPlaces(results, map, sortBy); // 검색 결과를 정렬 기준에 따라 표시
+        
+        moreButton.disabled = !pagination || !pagination.hasNextPage;
+        if (pagination && pagination.hasNextPage) {
+          getNextPage = () => pagination.nextPage();
+        }
+      }
+    );
+  }
+
+
   // Perform a nearby search.
   service.nearbySearch(
     { location: curLocation, radius: 5000, type: "veterinary_care" },
     (results, status, pagination) => {
       if (status !== "OK" || !results) return;
 
-      addPlaces(results, map);
+      //globalResults = results;
+      addPlaces(results, map, 'distance');
       moreButton.disabled = !pagination || !pagination.hasNextPage;
       if (pagination && pagination.hasNextPage) {
         getNextPage = () => {
@@ -36,8 +66,10 @@ function initMap() {
     },
   );
 
-  function addPlaces(places, map) {
+  function addPlaces(places, map, sortBy) {
     const placesList = document.getElementById("places");
+    placesList.innerHTML = '';
+    const sortedPlaces = places.filter(place => place.rating).sort((a, b) => b.rating - a.rating);
 
     // 거리 정보를 함께 가지는 객체 배열로 변환
     const placesWithDistance = places.map(place => {
@@ -54,33 +86,71 @@ function initMap() {
     // 거리순으로 정렬
     placesWithDistance.sort((a, b) => a.distance - b.distance);
 
-    for (const place of placesWithDistance) {
-      if (place.geometry && place.geometry.location) {
-        const image = {
-          url: place.icon,
-          size: new google.maps.Size(71, 71),
-          origin: new google.maps.Point(0, 0),
-          anchor: new google.maps.Point(17, 34),
-          scaledSize: new google.maps.Size(25, 25),
-        };
-
-        new google.maps.Marker({
-          map,
-          icon: image,
-          title: place.name,
-          position: place.geometry.location,
-        });
-
-        const distanceInKm = (place.distance / 1000).toFixed(1); // 거리를 km 단위로 반올림(소수 첫째 자리까지)
-        const li = document.createElement("li");
-        li.textContent = `${place.name} (${distanceInKm}km)`;
-        li.classList.add("hospitalsidebar");
-        placesList.appendChild(li);
-        li.addEventListener("click", () => {
-          map.setCenter(place.geometry.location);
-        });
+    if (sortBy == 'distance') {
+      for (const place of placesWithDistance) {
+        if (place.geometry && place.geometry.location) {
+          const image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25),
+          };
+  
+          new google.maps.Marker({
+            map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location,
+          });
+  
+          const distanceInKm = (place.distance / 1000).toFixed(1); // 거리를 km 단위로 반올림(소수 첫째 자리까지)
+          const li = document.createElement("li");
+          li.textContent = `${place.name} (${distanceInKm}km)`;
+          li.classList.add("hospitalsidebar");
+          placesList.appendChild(li);
+          li.addEventListener("click", () => {
+            map.setCenter(place.geometry.location);
+          });
+        }
       }
     }
+    else if (sortBy == 'rating') {
+      for (const place of sortedPlaces) {
+        if (place.geometry && place.geometry.location) {
+          const image = {
+            url: place.icon,
+            size: new google.maps.Size(71, 71),
+            origin: new google.maps.Point(0, 0),
+            anchor: new google.maps.Point(17, 34),
+            scaledSize: new google.maps.Size(25, 25),
+          };
+  
+          new google.maps.Marker({
+            map,
+            icon: image,
+            title: place.name,
+            position: place.geometry.location,
+          });
+  
+          // appending rating in p tag
+          const p = document.createElement("div");
+          p.textContent = '★ ' + place.rating;
+  
+          const li = document.createElement("li");
+  
+          li.textContent = place.name;
+          li.classList.add("hospitalsidebar");
+          li.appendChild(p);
+          placesList.appendChild(li);
+          li.addEventListener("click", () => {
+            map.setCenter(place.geometry.location);
+          });
+        }
+      }
+    }
+
+
   }
 
   function calculateDistance(lat1, lng1, lat2, lng2) {
