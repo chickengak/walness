@@ -61,6 +61,11 @@ li.hospitalsidebar:nth-child(odd) {
   background-color: #fcfcfc;
 }
 
+li.hospitalsidebar.active {
+  background-color: #4285F4; /* Google Blue */
+  color: white;
+}
+
 button {
   width: 100%;
   padding: 1rem;
