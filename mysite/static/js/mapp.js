@@ -30,9 +30,10 @@
   // Create the places service.
   const service = new google.maps.places.PlacesService(map);
   let getNextPage;
+  let allPlaces = [];   // 검색 결과 더보기를 눌렀을 때, 기존 검색 결과에 덧붙여서 다시 정렬하기 위한 전역 변수.
   const moreButton = document.getElementById("more");
-  const results1Button = document.getElementById("results1");
-  const results2Button = document.getElementById("results2");
+  const sortByDistanceButton = document.getElementById("sortByDistance");
+  const sortByRatingButton = document.getElementById("sortByRating");
 
   moreButton.onclick = function () {
     moreButton.disabled = true;
@@ -40,26 +41,34 @@
       getNextPage();
     }
   };
-
   
-  results1Button.onclick = function () {
+  sortByDistanceButton.onclick = function () {
+    allPlaces = [];   // 초기화
+    document.querySelectorAll('.hospitalsidebar').forEach(item => {
+      item.remove();
+    });               // document 도 초기화
     searchAndDisplayPlaces('distance');
   };
 
-  results2Button.onclick = function () {
+  sortByRatingButton.onclick = function () {
+    allPlaces = [];   // 초기화  
+    document.querySelectorAll('.hospitalsidebar').forEach(item => {
+      item.remove();
+    });               // document 도 초기화
     searchAndDisplayPlaces('rating');
   };
+
 
   function searchAndDisplayPlaces(sortBy) {
     service.nearbySearch(
       { location: curLocation, radius: 5000, type: "veterinary_care" },
       (results, status, pagination) => {
         if (status !== "OK" || !results) return;
+
+        allPlaces.push(...results);          // 검색 결과를 전역 변수에 저장
+        addPlaces(allPlaces, map, sortBy);   // 검색 결과를 정렬 기준에 따라 표시
         
-        //globalResults = results; // 검색 결과를 전역 변수에 저장
-        addPlaces(results, map, sortBy); // 검색 결과를 정렬 기준에 따라 표시
-        
-        moreButton.disabled = !pagination || !pagination.hasNextPage;
+        moreButton.disabled = !pagination || !pagination.hasNextPage;    // 검색 결과 더보기
         if (pagination && pagination.hasNextPage) {
           getNextPage = () => pagination.nextPage();
         }
@@ -68,7 +77,7 @@
   }
 
   // Perform a nearby search.
-  searchAndDisplayPlaces('distance');
+  searchAndDisplayPlaces('distance');     // 처음엔 거리가 가까운 병원 순으로 초기화해서 보여 준다.
 
   
   let currentInfoWindow = null;
@@ -136,7 +145,7 @@
         const distanceInKm = (place.distance / 1000).toFixed(1); // 거리를 km 단위로 반올림(소수 첫째 자리까지)
         
         const p = document.createElement("div");
-        p.textContent = '★' + place.rating + '　' + `(${distanceInKm}km)`;
+        p.textContent = '★' + place.rating + '　' + `(${distanceInKm}km)`;    // 별점과 거리를 보여주는 한 줄을 추가.
 
         const li = document.createElement("li");
         li.textContent = `${place.name}`;
@@ -155,7 +164,7 @@
           infoWindow.open(map, marker);
           currentInfoWindow = infoWindow;
 
-          // li 태그들에서 active 클래스 제거하고, 현재 클릭한 li만 active 클래스 추가함. 그리고 css가 스타일을 추가한다.
+          // li 태그들에서 active 클래스 제거하고, 현재 클릭한 li만 active 클래스 추가함. active 클래스는 css 스타일 적용을 위해 추가.
           document.querySelectorAll('.hospitalsidebar').forEach(item => {
             item.classList.remove('active');
           });
