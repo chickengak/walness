@@ -72,6 +72,14 @@ function initMap() {
     },
   );
 
+  let currentInfoWindow = null;
+
+  function closePreviousPopup() {
+    if (currentInfoWindow) {
+      currentInfoWindow.close();
+    }
+  }
+
   function addPlaces(places, map, sortBy) {
     const placesList = document.getElementById("places");
     placesList.innerHTML = '';
@@ -103,7 +111,7 @@ function initMap() {
             scaledSize: new google.maps.Size(25, 25),
           };
   
-          new google.maps.Marker({
+          const marker = new google.maps.Marker({
             map,
             icon: image,
             title: place.name,
@@ -116,7 +124,16 @@ function initMap() {
           li.classList.add("hospitalsidebar");
           placesList.appendChild(li);
           li.addEventListener("click", () => {
+            // 이전 팝업 닫기
+            closePreviousPopup();
+            // 중앙 이동
             map.setCenter(place.geometry.location);
+            // 장소 이름 팝업 생성
+            const infoWindow = new google.maps.InfoWindow({
+              content: `<h5>${place.name}<h5>`
+            });
+            infoWindow.open(map, marker);
+            currentInfoWindow = infoWindow;
 
             // li 태그들에서 active 클래스 제거하고, 현재 클릭한 li만 active 클래스 추가함. 그리고 css가 스타일을 추가한다.
             document.querySelectorAll('.hospitalsidebar').forEach(item => {
@@ -138,7 +155,7 @@ function initMap() {
             scaledSize: new google.maps.Size(25, 25),
           };
   
-          new google.maps.Marker({
+          const marker = new google.maps.Marker({
             map,
             icon: image,
             title: place.name,
@@ -156,7 +173,16 @@ function initMap() {
           li.appendChild(p);
           placesList.appendChild(li);
           li.addEventListener("click", () => {
+            // 이전 팝업 닫기
+            closePreviousPopup();
+            // 중앙 이동
             map.setCenter(place.geometry.location);
+            // 장소 이름 팝업 생성
+            const infoWindow = new google.maps.InfoWindow({
+              content: `<h5>${place.name}<h5>`
+            });
+            infoWindow.open(map, marker);
+            currentInfoWindow = infoWindow;
           });
         }
       }
