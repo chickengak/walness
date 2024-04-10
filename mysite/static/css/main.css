@@ -1990,7 +1990,7 @@ input, select, textarea {
 			}
 
 /* Special */
-
+/*
 	ul.special {
 		list-style: none;
 		padding-left: 0;
@@ -2038,7 +2038,7 @@ input, select, textarea {
 				ul.special li:hover a:before {
 					background: #b9d2ce;
 				}
-
+*/
 /* Meta */
 
 	ul.meta {

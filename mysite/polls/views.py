@@ -2,7 +2,9 @@ from django.shortcuts import render, redirect           # response의 응답페�
 from django.http import HttpResponse, JsonResponse      # 응답페이지의 형식
 from django.conf import settings
 from django.contrib import messages
-import googlemaps
+from .forms import ProductForm
+from .models import Product
+import os
 import requests
 import json
 # from .utils import *
@@ -10,8 +12,10 @@ import json
 
 # Create your views here.
 def index(request):
-    #return HttpResponse("Hello, world. You're at the polls index.")
-    return render(request, "index.html")
+    #return render(request, "index.html")
+    form = ProductForm() # 초기 폼을 index 페이지에 전달
+    return render(request, "index.html", {'form': form})
+
 
 def left_sidebar_view(request):
     return render(request, "left-sidebar.html")
@@ -20,25 +24,19 @@ def right_sidebar_view(request):
     return render(request, "right-sidebar.html")
 
 def no_sidebar_view(request):
-    headers = {'Content-Type': 'application/json',}
-    params = {'key': settings.GOOGLE_MAPS_API_KEY,}
-    json_data = {
-        'homeMobileCountryCode': 310,
-        'homeMobileNetworkCode': 410,
-        'radioType': 'gsm',
-        'carrier': 'Vodafone',
-        'considerIp': True,
-    }
-
-    response = requests.post('https://www.googleapis.com/geolocation/v1/geolocate', params=params, headers=headers, json=json_data)
-    gmaps = googlemaps.Client(key= settings.GOOGLE_MAPS_API_KEY)
-    print('---------------------', response.json())
-    results = gmaps.places(query="animal hospital", location=(response.json()["location"]["lat"], response.json()["location"]["lng"]), radius=5000)
-    print('---------------------', type(results), sep='\n')
-
-    # file_path = 'temp.json'
-    # with open(file_path, 'w', encoding='utf-8') as file:
-    #     json.dump(results, file)
-    
     context = {'google_maps_api_key': settings.GOOGLE_MAPS_API_KEY}
     return render(request, "no-sidebar.html", context)
+
+def product_create(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES) # 꼭 !!!! files는 따로 request의 FILES로 속성을 지정해줘야 함
+        if form.is_valid():
+            product = form.save()
+            return render(request, "index.html", {'product': product, 'form': ProductForm()})
+            # form.save()
+            # products = Product.objects.all() # 모든 Product 인스턴스를 불러옵니다.
+            # return render(request, "index.html", {'products': products})
+    else:
+        form = ProductForm() # request.method 가 'GET'인 경우
+    context = {'form':form}
+    return render(request, 'index', context)
