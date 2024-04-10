@@ -4,6 +4,7 @@ from django.conf import settings
 from django.contrib import messages
 from .forms import ProductForm
 from .models import Product
+from .utils import grad_cam, predict
 import os
 import requests
 import json
@@ -32,11 +33,12 @@ def product_create(request):
         form = ProductForm(request.POST, request.FILES) # 꼭 !!!! files는 따로 request의 FILES로 속성을 지정해줘야 함
         if form.is_valid():
             product = form.save()
-            return render(request, "index.html", {'product': product, 'form': ProductForm()})
+            img_path = product.imgfile.path
+            if grad_cam(img_path): # grad-cam 시행 후 이미지 파일 저장.
+                print('Complete grad_cam')
+            disease, accuracy = predict(img_path)  # 모델을 통해 예측 시행 후 disease에 값 넣기. 0 정상, 1 결막염, 2 백내장. 라벨링은 임시라서 바뀔 수도 있음.
+            return render(request, "index.html", {'product': product, 'form': ProductForm(), 'disease': disease, 'accuracy': accuracy})
             # form.save()
             # products = Product.objects.all() # 모든 Product 인스턴스를 불러옵니다.
             # return render(request, "index.html", {'products': products})
-    else:
-        form = ProductForm() # request.method 가 'GET'인 경우
-    context = {'form':form}
-    return render(request, 'index', context)
+    return redirect('index') # request.method 가 'GET'이거나 invalid 경우
