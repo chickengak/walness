@@ -31,22 +31,22 @@
             }
 
             /* 플로팅 광고 스타일 */
-            .floating-ad {
-                position: fixed;
-                bottom: 15px; /* 원하는 위치로 조정 */
-                right: 15px; /* 원하는 위치로 조정 */
-                width: 130px; /* 광고의 너비 조정 */
-                height: 400px; /* 광고의 높이 조정 */
-                background-color: #f0f0f0; /* 광고 배경색 조정 */
-                border: 1px solid #ccc; /* 광고 테두리 스타일 */
-                border-radius: 5px; /* 광고 테두리 둥글게 */
-                padding: 10px; /* 광고 내부 여백 조정 */
-                box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
-                z-index: 9999; /* 다른 요소들보다 위에 나타나도록 조정 */
+            .banner-ad {
+                position: relative;
+                width: 1200px;
+                height: auto; /* 세로는 자동으로 조정되도록 설정 */
+                /*overflow-x: scroll; /* 수평 스크롤을 활성화하여 넘치는 내용을 스크롤할 수 있도록 함 */
+                white-space: nowrap; /* 내용이 줄 바꿈되지 않도록 설정하여 가로로 긴 내용을 표시함 */
+                /*background-color: #f0f0f0; /* 광고 배경색 조정 */
+                /*border: 1px solid #ccc; /* 광고 테두리 스타일 */
+                /*border-radius: 5px; /* 광고 테두리 둥글게 */
+                /*padding: 10px; /* 광고 내부 여백 조정 */
+                /*box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* 그림자 효과 추가 */
+                /*z-index: 9999; /* 다른 요소들보다 위에 나타나도록 조정 */
             }
             
             /* 닫기 버튼 스타일 */
-            .floating-ad .close-btn {
+            .banner-ad .close-btn {
                 position: absolute;
                 top: 5px;
                 right: 5px;
@@ -56,7 +56,8 @@
             }
 
             /* 이미지 스타일 */
-            .floating-ad img {
+            .banner-ad img {
+                display: inline-block; /* 이미지가 인라인 요소로 표시되도록 함 */
                 width: 100%; /* 이미지를 부모 요소에 맞게 조정 */
                 height: auto; /* 가로 비율에 맞춰 세로 비율 조정 */
                 /* margin-top: 30px;  이미지 아래 여백 추가 */
@@ -98,20 +99,7 @@
             }
         </style>
     </head>
-    <body class="homepage is-preload">
-
-        <!-- 플로팅 광고 -->
-        <div class="floating-ad">
-            <!-- 닫기 버튼 -->
-            <span class="close-btn" onclick="document.querySelector('.floating-ad').style.display = 'none'">X</span>
-            
-            <!-- 광고 내용 -->
-            <h6>AD</h6>
-            <a href="https://kbinsure-mypet.co.kr/" class="image featured"><img src="{% static 'images/ad01.jpg' %}" alt="" /></a>
-            <!-- <a href="https://kbinsure-mypet.co.kr/" class="button alt">Learn more</a> -->
-        </div>
-
-        
+    <body class="homepage is-preload">        
 
         <div id="page-wrapper">
 
@@ -150,7 +138,7 @@
                             <div>
                                 <input type="file" name="imgfile" id="imgfile" accept="image/*" onchange="loadFile(this)">
                             </div>
-                            <input type="submit" value="제출">
+                            <input type="submit" value="제출" onclick="showAd()">
                         </form>
                         <!-- <a href="#main" class="button scrolly">Submit</a> -->
                     </div>
@@ -193,6 +181,28 @@
                                                 오류. 다시 시도하세요.
                                             </div>
                                             {% endif %}
+                                        {% endif %}
+                                    </ul>
+                                    <ul>
+                                        {% if product.imgfile %}
+                                        <!-- 플로팅 광고 -->
+                                        <div class="banner-ad">
+                                            <!-- 닫기 버튼 -->
+                                            <span class="close-btn" onclick="document.querySelector('.banner-ad').style.display = 'none'">X</span>
+                                            
+                                            <!-- 광고 내용 -->
+                                            <a href="https://kbinsure-mypet.co.kr/" class="image featured"><img src="{% static 'images/ad01_banner.jpg' %}" alt="" /></a>
+                                        </div>
+                                        {% else %}
+                                        <!-- 플로팅 광고 -->
+                                        <div class="banner-ad" id="banner-ad" style="display: none;">
+                                            <!-- 닫기 버튼 -->
+                                            <span class="close-btn" onclick="closeAd()">X</span>
+                                            
+                                            <!-- 광고 내용 -->
+                                            <a href="https://kbinsure-mypet.co.kr/" class="image featured"><img src="{% static 'images/ad01_banner.jpg' %}" alt="" /></a>
+                                        </div>
+
                                         {% endif %}
                                     </ul>
                                 </section>
@@ -326,6 +336,17 @@
                     //이미지를 image-show div에 추가
                     let container = document.getElementById('image-show');
                     container.appendChild(newImage);
+                }
+            </script>
+            <script>
+                function showAd() {
+                    var ad = document.getElementById("banner-ad");
+                    ad.style.display = "block"; // 플로팅 광고 보이도록 설정
+                }
+            
+                function closeAd() {
+                    var ad = document.getElementById("banner-ad");
+                    ad.style.display = "none"; // 플로팅 광고 숨김
                 }
             </script>
 
