@@ -2,15 +2,53 @@ import os
 from django.conf import settings
 import tensorflow as tf
 from tensorflow.keras.models import load_model
+from tensorflow.keras.applications import ResNet50
+from tensorflow.keras.applications.resnet import preprocess_input
+from tensorflow.keras.preprocessing import image
 from tensorflow.keras.utils import load_img
+import cv2
 import numpy as np
 
 MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'resnet50.h5')
 
-def grad_cam(img_path): # grad-cam 결과를 파일로 저장한 후 True 리턴
-    result_path = '/media/results/grad_cam_result.png'
-    print(f"Grad-CAM 결과를 {result_path}에 저장 완료")
-    return True
+
+def grad_cam(img_path):
+    model = ResNet50(weights='imagenet', include_top=True)
+
+    img = image.load_img(img_path, target_size=(224, 224))
+    img_array = image.img_to_array(img)
+    img_array = np.expand_dims(img_array, axis=0)
+    img_array = tf.keras.applications.resnet.preprocess_input(img_array)
+
+    last_conv_layer_name = "conv5_block3_out"
+    last_conv_layer = model.get_layer(last_conv_layer_name)
+    model = tf.keras.models.Model(model.inputs, [model.output, last_conv_layer.output])
+
+    with tf.GradientTape() as tape:
+        model_out, last_conv_layer = model(img_array)
+        class_out = model_out[:, np.argmax(model_out[0])]
+        grads = tape.gradient(class_out, last_conv_layer)
+        pooled_grads = tf.reduce_mean(grads, axis=(0, 1, 2))
+        last_conv_layer_output = last_conv_layer[0]
+        heatmap = last_conv_layer_output @ pooled_grads[..., tf.newaxis]
+        heatmap = tf.squeeze(heatmap)
+        heatmap = tf.maximum(heatmap, 0)
+        heatmap /= tf.reduce_max(heatmap)
+
+    heatmap = heatmap.numpy()
+
+    img = cv2.imread(img_path)
+    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    img = cv2.resize(img, (224, 224))
+
+    heatmap = cv2.resize(heatmap, (img.shape[1], img.shape[0]))
+    heatmap = cv2.applyColorMap(np.uint8(255 * heatmap), cv2.COLORMAP_JET)
+    gradcam_on_image = cv2.addWeighted(img, 0.8, heatmap, 0.2, 0)
+
+    result_path = os.path.join(settings.MEDIA_ROOT, 'results', 'grad_cam_result.png')
+    cv2.imwrite(result_path, gradcam_on_image)
+
+    return result_path
 
 def predict(img_path):
     model = load_model(MODEL_PATH)
