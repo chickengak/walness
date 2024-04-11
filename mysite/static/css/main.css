@@ -1830,7 +1830,8 @@ input, select, textarea {
 		input[type="reset"].alt,
 		button.alt,
 		.button.alt {
-			background: #c1cac5;
+			background: #58A399;
+			 
 		}
 
 			input[type="button"].alt:hover,
@@ -1854,7 +1855,7 @@ input, select, textarea {
 		input[type="reset"].large,
 		button.large,
 		.button.large {
-			font-size: 1.65em;
+			font-size: 1.20em;
 		}
 
 /* List */
@@ -2195,8 +2196,7 @@ input, select, textarea {
 
 	.box.highlight {
 		text-align: center;
-		font-family: 'NPSfontBold', sans-serif;
-	}
+			}
 
 		.box.highlight h2 {
 			font-size: 3em;
@@ -2665,6 +2665,7 @@ input, select, textarea {
 				font-size: 1.25em;
 			}
 
+			
 		/* Header */
 
 			#header {

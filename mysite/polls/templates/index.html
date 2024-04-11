@@ -29,6 +29,9 @@
             .col-12 div {
                 font-family: 'NPSfontBold', sans-serif;
             }
+            .large-text {
+                font-size: larger; /* 또는 다른 원하는 크기로 변경 */
+            }
 
             /* 플로팅 광고 스타일 */
             .banner-ad {
@@ -98,6 +101,7 @@
                 align-items: center; /* 이미지들을 세로 방향으로 중앙 정렬 */
             }
         </style>
+        
     </head>
     <body class="homepage is-preload">        
 
@@ -164,14 +168,19 @@
                                                 <img src="/media/results/grad_cam_result.png" width="100%">
                                             </div>
                                         </div>
+
+                                        <div class="highlight-box">
                                             {% if disease == 0 %}
-                                            <strong><span style="color: red;">[ 백내장 ]</span></strong>이 의심됩니다. 신뢰도: {{ accuracy }}%
-                                            </div>
-                                            
+                                            <strong class="large-text"><span style="color: red;">[ 백내장 ] </span></strong>이 의심됩니다. 
+                                            <div>신뢰도: {{ accuracy }}%</div>                                    
+                                            &nbsp;
+                                            <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
+
                                             {% elif disease == 1 %}
-                                            <div>
-                                                <strong><span style="color: red;">[ 결막염 ]</span></strong>이 의심됩니다. 신뢰도: {{ accuracy }}%  
-                                            </div>
+                                            <strong class="large-text"><span style="color: red;">[ 결막염 ] </span></strong>이 의심됩니다. 
+                                            <div>신뢰도: {{ accuracy }}%</div>
+                                            &nbsp;
+                                            <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
                                             {% elif disease == 2 %}
                                             <div>
                                                 질병의 양상을 보이지 않는 <strong><span style="color: blue;">건강한 상태</span></strong>입니다👍   신뢰도: {{ accuracy }}%
@@ -179,9 +188,13 @@
                                             {% else %}
                                             <div>
                                                 오류. 다시 시도하세요.
-                                            </div>
+                                            </div>                                        
+                                        </div>
+                                        </div>
                                             {% endif %}
+                    
                                         {% endif %}
+                                        <li><a href="{% url 'no_sidebar_view' %}" class="button alt large">주위의 동물병원 찾기</a></li>
                                     </ul>
                                     <ul>
                                         {% if product.imgfile %}
@@ -208,6 +221,7 @@
                                 </section>
 
                             </div>
+                                </section>                            
                             <div class="col-12">
 
                                 <!-- Features -->
