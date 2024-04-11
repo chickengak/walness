@@ -1,7 +1,9 @@
 import os
 from django.conf import settings
+import tensorflow as tf
 from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import load_img
+import numpy as np
 
 MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'resnet50.h5')
 
@@ -13,6 +15,17 @@ def grad_cam(img_path): # grad-cam 결과를 파일로 저장한 후 True 리턴
 def predict(img_path):
     model = load_model(MODEL_PATH)
     img = load_img(img_path, target_size=(224, 224))
-    disease = 0  # 0 정상, 1 결막염, 2 백내장. 라벨링은 임시라서 바뀔 수도 있음.
-    accuracy = 87.654
+
+    # 이미지를 텐서 형식으로 변환
+    tensor = tf.image.resize(img, [224, 224])  # 모델의 입력 크기에 맞게 조정
+    tensor = tf.cast(tensor, tf.float32)
+    tensor = tf.expand_dims(tensor, axis=0)
+    
+    # 예측 수행
+    predictions = model.predict(tensor)
+
+    # 예측 결과
+    disease = np.argmax(predictions)
+    accuracy = predictions[0][disease] * 100
+
     return [disease, accuracy]
