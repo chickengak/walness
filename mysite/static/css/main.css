@@ -2195,6 +2195,7 @@ input, select, textarea {
 
 	.box.highlight {
 		text-align: center;
+		font-family: 'NPSfontBold', sans-serif;
 	}
 
 		.box.highlight h2 {

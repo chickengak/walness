@@ -25,6 +25,10 @@
             h1, h2, h3, h4, h5, h6, p, a {
                 font-family: 'NPSfontBold', sans-serif;
             }
+            
+            .col-12 div {
+                font-family: 'NPSfontBold', sans-serif;
+            }
 
             /* 플로팅 광고 스타일 */
             .floating-ad {
@@ -163,7 +167,7 @@
                                 <section class="box highlight">
                                     <ul class="special">
                                         {% if product.imgfile %}
-                                        <div class="image-container">
+                                        <div class="image-container" style="margin-top: 20px; margin-bottom: 20px;">
                                             
                                             <div class="showing-inputted-image">
                                                 <img src="{{ product.imgfile.url }}" width="100%">
@@ -173,16 +177,16 @@
                                             </div>
                                         </div>
                                             {% if disease == 0 %}
-                                            <div>
-                                                건강해. 정확도: {{ accuracy }}%
+                                            <strong><span style="color: red;">[ 결막염 ]</span></strong>이 의심됩니다. 신뢰도: {{ accuracy }}%
                                             </div>
+                                            
                                             {% elif disease == 1 %}
                                             <div>
-                                                아퍼 결막염 걸렸어. 정확도: {{ accuracy }}%
+                                                <strong><span style="color: red;">[ 백내장 ]</span></strong>이 의심됩니다. 신뢰도: {{ accuracy }}%  
                                             </div>
                                             {% elif disease == 2 %}
                                             <div>
-                                                아퍼 백내장 걸렸어. 정확도: {{ accuracy }}%
+                                                질병의 양상을 보이지 않는 <strong><span style="color: green;"></span>건강한 상태</strong>입니다👍   신뢰도: {{ accuracy }}%
                                             </div>
                                             {% else %}
                                             <div>
