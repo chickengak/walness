@@ -194,11 +194,11 @@
                                             {% endif %}
                     
                                         {% endif %}
-                                        <li><a href="{% url 'no_sidebar_view' %}" class="button alt large">주위의 동물병원 찾기</a></li>
+                                        <ul><a href="{% url 'no_sidebar_view' %}" class="button alt large">주위의 동물병원 찾기</a></ul>
                                     </ul>
                                     <ul>
                                         {% if product.imgfile %}
-                                        <!-- 플로팅 광고 -->
+                                        <!-- 배너 광고 -->
                                         <div class="banner-ad">
                                             <!-- 닫기 버튼 -->
                                             <span class="close-btn" onclick="document.querySelector('.banner-ad').style.display = 'none'">X</span>
@@ -207,13 +207,22 @@
                                             <a href="https://kbinsure-mypet.co.kr/" class="image featured"><img src="{% static 'images/ad01_banner.jpg' %}" alt="" /></a>
                                         </div>
                                         {% else %}
-                                        <!-- 플로팅 광고 -->
+                                        <!-- 배너 광고 -->
                                         <div class="banner-ad" id="banner-ad" style="display: none;">
-                                            <!-- 닫기 버튼 -->
-                                            <span class="close-btn" onclick="closeAd()">X</span>
-                                            
-                                            <!-- 광고 내용 -->
-                                            <a href="https://kbinsure-mypet.co.kr/" class="image featured"><img src="{% static 'images/ad01_banner.jpg' %}" alt="" /></a>
+                                            <ul>
+                                                <!-- 분석 로딩 메세지-->
+                                                <div class="loading-message" style="display: flex; justify-content: center; align-items: center;">
+                                                    <h4>분석 중입니다...</h4>
+                                                    <img src="{% static 'images/loading_animation.gif' %}" alt="" style="width: 60px; height: auto; margin-left: 10px;" />
+                                                </div>
+                                            </ul>
+                                            <ul style="position: relative;">
+                                                <!-- 닫기 버튼 -->
+                                                <span class="close-btn" onclick="closeAd()">X</span>
+                                                
+                                                <!-- 광고 내용 -->
+                                                <a href="https://kbinsure-mypet.co.kr/" class="image featured"><img src="{% static 'images/ad01_banner.jpg' %}" alt="" /></a>
+                                            </ul>
                                         </div>
 
                                         {% endif %}
@@ -221,7 +230,7 @@
                                 </section>
 
                             </div>
-                                </section>                            
+                                                            
                             <div class="col-12">
 
                                 <!-- Features -->
