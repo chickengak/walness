@@ -30,15 +30,16 @@ def no_sidebar_view(request):
 
 def product_create(request):
     if request.method == 'POST':
-        form = ProductForm(request.POST, request.FILES) # 꼭 !!!! files는 따로 request의 FILES로 속성을 지정해줘야 함
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             product = form.save()
             img_path = product.imgfile.path
-            if grad_cam(img_path): # grad-cam 시행 후 이미지 파일 저장.
+            gradcam_image_path = grad_cam(img_path)  # grad-cam 이미지 생성
+            if gradcam_image_path:  # grad-cam 이미지가 성공적으로 생성되었을 때
                 print('Complete grad_cam')
-            disease, accuracy = predict(img_path)  # 모델을 통해 예측 시행 후 disease에 값 넣기. 0 정상, 1 결막염, 2 백내장. 라벨링은 임시라서 바뀔 수도 있음.
-            return render(request, "index.html", {'product': product, 'form': ProductForm(), 'disease': disease, 'accuracy': accuracy})
-            # form.save()
-            # products = Product.objects.all() # 모든 Product 인스턴스를 불러옵니다.
-            # return render(request, "index.html", {'products': products})
-    return redirect('index') # request.method 가 'GET'이거나 invalid 경우
+                # predict 함수 호출하여 결과 얻기
+                disease, accuracy = predict(img_path)
+                return render(request, "index.html", {'product': product, 'form': ProductForm(), 'gradcam_image_path': gradcam_image_path, 'disease': disease, 'accuracy': accuracy})
+            else:  # grad-cam 이미지 생성 실패 시
+                messages.error(request, 'Failed to generate Grad-CAM image.')
+    return redirect('index')
