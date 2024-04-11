@@ -5,7 +5,7 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.utils import load_img
 import numpy as np
 
-MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'optuna_resnet50.h5')
+MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'resnet50.h5')
 
 def grad_cam(img_path): # grad-cam 결과를 파일로 저장한 후 True 리턴
     result_path = '/media/results/grad_cam_result.png'
@@ -26,6 +26,6 @@ def predict(img_path):
 
     # 예측 결과
     disease = np.argmax(predictions)
-    accuracy = predictions[0][disease] * 100
+    accuracy = round(predictions[0][disease] * 100, 2)
 
     return [disease, accuracy]
