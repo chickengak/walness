@@ -143,6 +143,7 @@
                                 <input type="file" name="imgfile" id="imgfile" accept="image/*" onchange="loadFile(this)">
                             </div>
                             <input type="submit" value="제출" onclick="showAd()">
+
                         </form>
                         <!-- <a href="#main" class="button scrolly">Submit</a> -->
                     </div>
@@ -159,7 +160,7 @@
                                 <section class="box highlight">
                                     <ul class="special">
                                         {% if product.imgfile %}
-                                        <div class="image-container" style="margin-top: 20px; margin-bottom: 20px;">
+                                        <div class="image-container" id="result-section" style="margin-top: 20px; margin-bottom: 20px; outline: none;" tabindex="0">
                                             
                                             <div class="showing-inputted-image">
                                                 <img src="{{ product.imgfile.url }}" width="100%">
@@ -221,7 +222,7 @@
                                                 <span class="close-btn" onclick="closeAd()">X</span>
                                                 
                                                 <!-- 광고 내용 -->
-                                                <a href="https://kbinsure-mypet.co.kr/" class="image featured"><img src="{% static 'images/ad01_banner.jpg' %}" alt="" /></a>
+                                                <a href="https://kbinsure-mypet.co.kr/" id="ad-link" class="image featured"><img src="{% static 'images/ad01_banner.jpg' %}" alt="" /></a>
                                             </ul>
                                         </div>
 
@@ -364,13 +365,21 @@
             <script>
                 function showAd() {
                     var ad = document.getElementById("banner-ad");
-                    ad.style.display = "block"; // 플로팅 광고 보이도록 설정
+                    ad.style.display = "block"; // 배너 광고 보이도록 설정
+                    var link = document.getElementById("ad-link");
+                    link.focus(); // 링크로 포커스 이동
                 }
             
                 function closeAd() {
                     var ad = document.getElementById("banner-ad");
                     ad.style.display = "none"; // 플로팅 광고 숨김
                 }
+            </script>
+            <script>
+                window.onload = function() {
+                    // 페이지가 로드되면 결과 부분으로 포커스 이동
+                    document.getElementById("result-section").focus();
+                };
             </script>
 
     </body>
