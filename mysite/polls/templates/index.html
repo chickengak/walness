@@ -177,16 +177,16 @@
                                             </div>
                                         </div>
                                             {% if disease == 0 %}
-                                            <strong><span style="color: red;">[ 결막염 ]</span></strong>이 의심됩니다. 신뢰도: {{ accuracy }}%
+                                            <strong><span style="color: red;">[ 백내장 ]</span></strong>이 의심됩니다. 신뢰도: {{ accuracy }}%
                                             </div>
                                             
                                             {% elif disease == 1 %}
                                             <div>
-                                                <strong><span style="color: red;">[ 백내장 ]</span></strong>이 의심됩니다. 신뢰도: {{ accuracy }}%  
+                                                <strong><span style="color: red;">[ 결막염 ]</span></strong>이 의심됩니다. 신뢰도: {{ accuracy }}%  
                                             </div>
                                             {% elif disease == 2 %}
                                             <div>
-                                                질병의 양상을 보이지 않는 <strong><span style="color: green;"></span>건강한 상태</strong>입니다👍   신뢰도: {{ accuracy }}%
+                                                질병의 양상을 보이지 않는 <strong><span style="color: blue;">건강한 상태</span></strong>입니다👍   신뢰도: {{ accuracy }}%
                                             </div>
                                             {% else %}
                                             <div>
