@@ -10,11 +10,11 @@ import cv2
 import numpy as np
 
 MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'resnet50.h5')
-
+MODEL_PATH1 = os.path.join(settings.BASE_DIR, 'static', 'model.h5')
 
 def grad_cam(img_path):
-    model = ResNet50(weights='imagenet', include_top=True)
-
+    # model = ResNet50(weights='imagenet', include_top=True)
+    model = load_model(MODEL_PATH1)
     img = image.load_img(img_path, target_size=(224, 224))
     img_array = image.img_to_array(img)
     img_array = np.expand_dims(img_array, axis=0)
