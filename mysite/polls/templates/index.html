@@ -161,7 +161,7 @@
                             <div class="col-12">
 
                                 <!-- Highlight -->
-                                <section class="box highlight">
+                                <section class="box highlight" style="text-align: center;">
                                     <ul class="special">
                                         {% if product.imgfile %}
                                         <div class="image-container" id="result-section" style="margin-top: 20px; margin-bottom: 20px; outline: none;" tabindex="0">
@@ -214,10 +214,11 @@
                                                 {% endif %}
                                             {% endif %}                                       
                                         </div>
-                                        </div>
+                                        
                     
                                         {% endif %}
                                         <ul><a href="{% url 'no_sidebar_view' %}" class="button alt large">주위의 동물병원 찾기</a></ul>
+                                    
                                     </ul>
                                     <ul>
                                         {% if product.imgfile %}
@@ -250,7 +251,7 @@
 
                                         {% endif %}
                                     </ul>
-                                </section>
+                                
 
                             </div>
                                                             
