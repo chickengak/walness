@@ -9,7 +9,8 @@ from tensorflow.keras.utils import load_img
 import cv2
 import numpy as np
 
-MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'resnet50.h5')
+DOG_MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'resnet50.h5')
+CAT_MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'cat_resnet50.h5')
 MODEL_PATH1 = os.path.join(settings.BASE_DIR, 'static', 'model.h5')
 
 def grad_cam(img_path):
@@ -50,8 +51,14 @@ def grad_cam(img_path):
 
     return result_path
 
-def predict(img_path):
-    model = load_model(MODEL_PATH)
+def predict(img_path, pet_type):
+    if pet_type == 'dog':
+        model = load_model(DOG_MODEL_PATH)
+        print("load dog model")
+    elif pet_type == 'cat':
+        model = load_model(CAT_MODEL_PATH)
+        print("load cat model")
+
     img = load_img(img_path, target_size=(224, 224))
 
     # 이미지를 텐서 형식으로 변환
@@ -64,6 +71,7 @@ def predict(img_path):
 
     # 예측 결과
     disease = np.argmax(predictions)
+    print(disease)
     accuracy = round(predictions[0][disease] * 100, 2)
 
     return [disease, accuracy]

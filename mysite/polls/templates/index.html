@@ -128,22 +128,26 @@
 
             <!-- Banner -->
                 <section id="banner" >
-                    <div class="content" >
+                    <div class="content" style="height: 600px;">
                         <h2>Walness🐾</h2>
                         <p>무심코 발견한 우리 강아지 눈의 이상 징후,  왈니스로 한번 체크해보세요 !</p>
                         <div class="how-to-container">
                             <p class = "how-to-container">왈니스를 이용하기 위해서는 사진을 업로드해주세요.</p>
                             <p class = "how-to-container">사진의 중앙에 우리아이 눈이 올 수 있도록 위치하고 사진을 찍은 뒤, 업로드하면 완료! </p>
-                        </div>
+                        </div>                       
                         <!-- 이미지 첨부할 공간 -->
                         <form class="inputImg" action="{% url 'createform' %}" method="post" enctype="multipart/form-data">
+                            <select name="pet_type" style="font-size: 10px; height: 30px;">
+                                <option value="dog">강아지</option>
+                                <option value="cat">고양이</option>
+                            </select>
                             <div class="addImage" id="image-show"> <!-- 이미지 띄울 공간 --> </div>
                             {% csrf_token %}
                             <div>
                                 <input type="file" name="imgfile" id="imgfile" accept="image/*" onchange="loadFile(this)">
                             </div>
+                            
                             <input type="submit" value="제출" onclick="showAd()">
-
                         </form>
                         <!-- <a href="#main" class="button scrolly">Submit</a> -->
                     </div>
@@ -171,28 +175,46 @@
                                         </div>
 
                                         <div class="highlight-box">
-                                            {% if disease == 0 %}
-                                            <strong class="large-text"><span style="color: red;">[ 백내장 ] </span></strong>이 의심됩니다. 
-                                            <div>신뢰도: {{ accuracy }}%</div>                                    
-                                            &nbsp;
-                                            <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
+                                            {% if pet_type == 'dog' %}
+                                                {% if disease == 0 %}
+                                                <strong class="large-text"><span style="color: red;">[ 백내장 ] </span></strong>이 의심됩니다. 
+                                                <div>신뢰도: {{ accuracy }}%</div>                                    
+                                                &nbsp;
+                                                <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
 
-                                            {% elif disease == 1 %}
-                                            <strong class="large-text"><span style="color: red;">[ 결막염 ] </span></strong>이 의심됩니다. 
-                                            <div>신뢰도: {{ accuracy }}%</div>
-                                            &nbsp;
-                                            <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
-                                            {% elif disease == 2 %}
-                                            <div>
-                                                질병의 양상을 보이지 않는 <strong><span style="color: blue;">건강한 상태</span></strong>입니다👍   신뢰도: {{ accuracy }}%
-                                            </div>
-                                            {% else %}
-                                            <div>
-                                                오류. 다시 시도하세요.
-                                            </div>                                        
+                                                {% elif disease == 1 %}
+                                                <strong class="large-text"><span style="color: red;">[ 결막염 ] </span></strong>이 의심됩니다. 
+                                                <div>신뢰도: {{ accuracy }}%</div>
+                                                &nbsp;
+                                                <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
+                                                {% elif disease == 2 %}
+                                                <div>
+                                                    질병의 양상을 보이지 않는 <strong><span style="color: blue;">건강한 상태</span></strong>입니다👍   신뢰도: {{ accuracy }}%
+                                                </div>
+                                                {% else %}
+                                                <div>
+                                                    오류. 다시 시도하세요.
+                                                </div> 
+                                                {% endif %}
+                                            {% elif pet_type == 'cat' %}
+                                                {% if disease == 1 %}
+                                                <strong class="large-text"><span style="color: red;">[ 결막염 ] </span></strong>이 의심됩니다. 
+                                                <div>신뢰도: {{ accuracy }}%</div>                                    
+                                                &nbsp;
+                                                <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
+
+                                                {% elif disease == 0 %}
+                                                <div>
+                                                    질병의 양상을 보이지 않는 <strong><span style="color: blue;">건강한 상태</span></strong>입니다👍
+                                                </div>
+                                                {% else %}
+                                                <div>
+                                                    오류. 다시 시도하세요.
+                                                </div> 
+                                                {% endif %}
+                                            {% endif %}                                       
                                         </div>
                                         </div>
-                                            {% endif %}
                     
                                         {% endif %}
                                         <ul><a href="{% url 'no_sidebar_view' %}" class="button alt large">주위의 동물병원 찾기</a></ul>
