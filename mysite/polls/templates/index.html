@@ -155,10 +155,22 @@
                         </div>                       
                         <!-- 이미지 첨부할 공간 -->
                         <form class="inputImg" action="{% url 'createform' %}" method="post" enctype="multipart/form-data">
-                            <select name="pet_type" style="font-size: 10px; height: 30px;">
+                            <!--select name="pet_type" style="font-size: 10px; height: 30px;">
                                 <option value="dog">강아지</option>
                                 <option value="cat">고양이</option>
-                            </select>
+                            </select-->
+                            <input type="hidden" id="pet_type" name="pet_type" value="dog">
+                            <input type="button" id="petbutton" name="petbutton" value="dog" onclick="
+                            if(document.querySelector('#petbutton').value === 'dog'){
+                                document.querySelector('#pet_type').value = 'cat';
+                                document.querySelector('#petbutton').value = 'cat';
+                            }else{
+                                document.querySelector('#pet_type').value = 'dog';
+                                document.querySelector('#petbutton').value = 'dog';
+                            }"
+                             style = "color:black; background-color: white; margin-bottom: 10px;">
+
+
                             <div class="addImage" id="image-show"> <!-- 이미지 띄울 공간 --> </div>
                             {% csrf_token %}
                             <div>
