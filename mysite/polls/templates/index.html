@@ -100,6 +100,24 @@
                 justify-content: center; /* 이미지들을 가로 방향으로 중앙 정렬 */
                 align-items: center; /* 이미지들을 세로 방향으로 중앙 정렬 */
             }
+            .info-container {
+                display: flex;
+                justify-content: space-between;
+            }
+            
+            .info-container > div {
+                width: 30%;
+                background-color: #f3f3f3;
+                border-radius: 10px;
+                padding: 10px;
+            }
+
+            .info-container ul {
+                margin-top: 5px;
+                padding-left: 15px;
+                list-style-type: none;
+                margin-bottom: 0; /* 아래쪽 마진 제거 */
+            }
         </style>
         
     </head>
@@ -122,7 +140,7 @@
                     <ul>
                         <li class="current"><a href="{% url 'index' %}">Home</a></li>
                         <li><a href="{% url 'left_sidebar_view' %}">왈니스를 소개합니다</a></li>
-                        <li><a href="{% url 'no_sidebar_view' %}">왈니스 동물병원</a></li>
+                        <li><a href="{% url 'no_sidebar_view' %}">왈니스 동물 병원</a></li>
                     </ul>
                 </nav>
 
@@ -130,10 +148,10 @@
                 <section id="banner" >
                     <div class="content" style="height: 600px;">
                         <h2>Walness🐾</h2>
-                        <p>무심코 발견한 우리 강아지 눈의 이상 징후,  왈니스로 한번 체크해보세요 !</p>
+                        <p>무심코 발견한 우리 아이 눈의 이상 징후,  왈니스로 한번 체크해 보세요 !</p>
                         <div class="how-to-container">
-                            <p class = "how-to-container">왈니스를 이용하기 위해서는 사진을 업로드해주세요.</p>
-                            <p class = "how-to-container">사진의 중앙에 우리아이 눈이 올 수 있도록 위치하고 사진을 찍은 뒤, 업로드하면 완료! </p>
+                            <p class = "how-to-container">왈니스를 이용하기 위해 사진을 업로드해 주세요.</p>
+                            <p class = "how-to-container">사진의 중앙에 우리 아이 눈이 올 수 있도록 위치하고 사진을 찍은 뒤, 업로드하면 완료! </p>
                         </div>                       
                         <!-- 이미지 첨부할 공간 -->
                         <form class="inputImg" action="{% url 'createform' %}" method="post" enctype="multipart/form-data">
@@ -180,12 +198,67 @@
                                                 <strong class="large-text"><span style="color: red;">[ 백내장 ] </span></strong>이 의심됩니다. 
                                                 <div>신뢰도: {{ accuracy }}%</div>                                    
                                                 &nbsp;
+                                                <div class="info-container">
+                                                    <div>
+                                                        <h3>🔍백내장이란?</h3>
+                                                        <p> 
+                                                            강아지 백내장은 눈의 수정체가 흐려지거나 불투명해져 시력에 장애를 주는 질환입니다. 
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <h3>🔍원인은?</h3>
+                                                        <ul style="list-style-type: none;">
+                                                            <li>유전적 소인</li>
+                                                            <li>노화</li>
+                                                            <li>당뇨병</li>
+                                                            <li>눈 부상 또는 염증</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h3>🔍증상은?</h3>
+                                                        <ul style="list-style-type: none;">
+                                                            <li>혼탁하고 불투명한 눈</li>
+                                                            <li>물체에 부딪히는 등 활동 제약</li>
+                                                            <li>눈을 가늘게 뜨거나 문지르는 행동</li>
+                                                            <li>눈 주위의 홍조, 붓기 또는 분비물</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <br>
                                                 <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
 
                                                 {% elif disease == 1 %}
                                                 <strong class="large-text"><span style="color: red;">[ 결막염 ] </span></strong>이 의심됩니다. 
                                                 <div>신뢰도: {{ accuracy }}%</div>
                                                 &nbsp;
+                                                <div class="info-container">
+                                                    <div>
+                                                        <h3>🔍결막염이란?</h3>
+                                                        <p> 
+                                                            강아지 결막염은 안구와 안검을 결합하는 점막 조직에 염증이 발생하는 질병입니다. 
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <h3>🔍원인은?</h3>
+                                                        <ul style="list-style-type: none;">
+                                                            <li>세균, 바이러스, 기생충 등에 의한 감염</li>
+                                                            <li>환경적 요인에 의한 알레르기 반응</li>
+                                                            <li>먼지, 연기, 화학물질 등에 의한 자극</li>
+                                                            <li>외상에 의한 결막 조직의 물리적 손상</li>
+                                                            <li>만성 안구건조증 등의 안구 질환</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h3>🔍증상은?</h3>
+                                                        <ul style="list-style-type: none;">
+                                                            <li>눈을 가려워하거나 찡그림</li>
+                                                            <li>흰자 부분 빨갛게 충혈됨</li>
+                                                            <li>눈 주변이 부어오름</li>
+                                                            <li>눈물, 눈곱 양이 늘어남</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <br>
                                                 <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
                                                 {% elif disease == 2 %}
                                                 <div>
@@ -201,6 +274,33 @@
                                                 <strong class="large-text"><span style="color: red;">[ 결막염 ] </span></strong>이 의심됩니다. 
                                                 <div>신뢰도: {{ accuracy }}%</div>                                    
                                                 &nbsp;
+                                                <div class="info-container">
+                                                    <div>
+                                                        <h3>🔍결막염이란?</h3>
+                                                        <p> 
+                                                            고양이 결막염은 눈꺼풀의 얇은 막인 결막에 염증이 생기는 질병입니다. 
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <h3>🔍원인은?</h3>
+                                                        <ul style="list-style-type: none;">
+                                                            <li>허피스, 칼리시 바이러스, 박테리아 등의 감염</li>
+                                                            <li>알레르기</li>
+                                                            <li>유전적 원인</li>
+                                                            <li>환경 변화</li>
+                                                        </ul>
+                                                    </div>
+                                                    <div>
+                                                        <h3>🔍증상은?</h3>
+                                                        <ul style="list-style-type: none;">
+                                                            <li>눈을 뜨는 것을 불편해함</li>
+                                                            <li>흰자위 부분이 빨갛게 충혈됨</li>
+                                                            <li>눈 주변이 부어있음</li>
+                                                            <li>눈물, 눈곱이 많이 남</li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <br>
                                                 <div> 신속한 병원 방문 및 진료를 권장합니다. </div>
 
                                                 {% elif disease == 0 %}
@@ -217,7 +317,7 @@
                                         
                     
                                         {% endif %}
-                                        <ul><a href="{% url 'no_sidebar_view' %}" class="button alt large">주위의 동물병원 찾기</a></ul>
+                                        <ul><a href="{% url 'no_sidebar_view' %}" class="button alt large">주위의 동물 병원 찾기</a></ul>
                                     
                                     </ul>
                                     <ul>
@@ -267,9 +367,10 @@
                                                 <!-- Feature -->
                                                 <section class="box feature">
                                                     <a href="#" class="image featured"><img src="{% static 'images/dogey.png' %}" alt="" /></a>
-                                                    <h3><a href="#">댕댕이의 눈은 안녕할까?</a></h3>
+                                                    <h3><a href="#">우리 아이의 눈은 안녕할까?</a></h3>
                                                     <p>
-                                                        무한한 행복을 선사해주는 반려동물들 , 불편한 증상을 보이는데도 무심코 넘어가게 되지는 않나요? 시기를 놓치면 되돌리기 힘든 우리집 반려동물들의 눈 건강, 조기진단으로 미리 미리 지켜주세요. 그들의 안녕이 곧 우리의 안녕이니까요 !
+                                                        무한한 행복을 선사해 주는 반려동물들 , 불편한 증상을 보이는데도 무심코 넘어가게 되지는 않나요? 
+                                                        시기를 놓치면 되돌리기 힘든 우리 집 반려동물들의 눈 건강, 조기진단으로 미리미리 지켜주세요. 그들의 안녕이 곧 우리의 안녕이니까요 !
                                                     </p>
                                                 </section>
 
@@ -281,7 +382,8 @@
                                                     <a href="#" class="image featured"><img src="{% static 'images/walness_cam.png' %}" alt="" /></a>
                                                     <h3><a href="#">이렇게 이용해요!</a></h3>
                                                     <p>
-                                                        눈에 이상 징후가 보이는 것 같나요 ?  지나치지 말고, 주머니 속 휴대폰으로 찰칵 !  촬영된 사진을 AI 기술을 통해 체크해보세요. 빠르게 분석하고 의심되는 질병을 확인할 수 있습니다.  함께 건강한 삶을 누리기 위한 쉬운 방법, 왈니스와 함께하세요
+                                                        눈에 이상 징후가 보이는 것 같나요 ?  지나치지 말고, 주머니 속 휴대폰으로 찰칵 !  촬영된 사진을 AI 기술을 통해 체크해 보세요. 
+                                                        빠르게 분석하고 의심되는 질병을 확인할 수 있습니다.  함께 건강한 삶을 누리기 위한 쉬운 방법, 왈니스와 함께하세요
                                                     </p>
                                                 </section>
 
@@ -293,7 +395,8 @@
                                                     <a href="#" class="image featured"><img src="{% static 'images/시각화123.png' %}" alt="" /></a>
                                                     <h3><a href="#">이 안과질환은 ...</a></h3>
                                                     <p>
-                                                        왈니스는 ResNet이라는 딥러닝 모델을 활용하여 반려견 안구질환 데이터셋을 학습하고, 이를 기반으로 반려견의 안구 질환을 예측합니다. 약 90%의 정확도를 보이는 모델을 통해 효과적인 예측을 제공할 뿐만 아니라, 이미지의 어떤 부분을 기반으로 예측했는지를 함께 보여줍니다.
+                                                        왈니스는 ResNet이라는 딥러닝 모델을 활용하여 반려동물 안구질환 데이터셋을 학습하고, 이를 기반으로 반려동물의 안구 질환을 예측합니다. 
+                                                        약 90%의 정확도를 보이는 모델을 통해 효과적인 예측을 제공할 뿐만 아니라, 이미지의 어떤 부분을 기반으로 예측했는지를 함께 보여줍니다.
                                                     </p>
                                                 </section>
 
@@ -303,9 +406,10 @@
                                                 <!-- Feature -->
                                                 <section class="box feature">
                                                     <a href="#" class="image featured"><img src="{% static 'images/동물병원지도1.png' %}" alt="" /></a>
-                                                    <h3><a href="#">동물병원은 어디에?</a></h3>
+                                                    <h3><a href="#">동물 병원은 어디에?</a></h3>
                                                     <p>
-                                                        이미 증상을 보이는 강아지라면 긴 거리를 이동할 수록 더욱 스트레스일 수 있습니다. 빠르게 도착할 수 있는 동물 병원도 왈니스에서 확인하세요. 빠른 동물병원 방문이 큰 병을 막는다 !
+                                                        이미 증상을 보이는 반려동물이라면 긴 거리를 이동할수록 더욱 스트레스일 수 있습니다. 
+                                                        빠르게 도착할 수 있는 동물 병원도 왈니스에서 확인하세요. 빠른 동물 병원 방문이 큰 병을 막는다 !
                                                     </p>
                                                 </section>
 
@@ -313,7 +417,7 @@
                                             <div class="col-12">
                                                 <ul class="actions">
                                                     <li><a href="{% url 'left_sidebar_view' %}" class="button large">왈니스팀 소개</a></li>
-                                                    <li><a href="{% url 'no_sidebar_view' %}" class="button alt large">동물병원 찾기</a></li>
+                                                    <li><a href="{% url 'no_sidebar_view' %}" class="button alt large">동물 병원 찾기</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -338,7 +442,7 @@
                                     <h2 class="major"><span>Walness about?</span></h2>
                                     <p>
                                        저희는 <strong>왈니스</strong>팀 입니다. 최근 반려동물을 키우는 가구가 늘어나고 있고
-                                       이러한 사회적 영향을 고려하여, 우리 서비스는 반려동물 보호자들이 시간과 장소에 구애받지 않고, 반려견의 안구질환을 예측하는데 목적을 두고 있습니다. :)
+                                       이러한 사회적 영향을 고려하여, 우리 서비스는 반려동물 보호자들이 시간과 장소에 구애받지 않고, 반려동물의 안구질환을 예측하는 데 목적을 두고 있습니다. :)
                                     </p>
                                  </section>
 
