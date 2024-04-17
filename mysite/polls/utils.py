@@ -11,36 +11,16 @@ import numpy as np
 
 DOG_MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'resnet50.h5')
 CAT_MODEL_PATH = os.path.join(settings.BASE_DIR, 'static', 'cat_resnet50.h5')
-MODEL_PATH1 = os.path.join(settings.BASE_DIR, 'static', 'model.h5')
+# MODEL_PATH1 = os.path.join(settings.BASE_DIR, 'static', 'model.h5')
 
 def grad_cam(img_path):
-    # model = ResNet50(weights='imagenet', include_top=True)
-    model = load_model(MODEL_PATH1)
-    img = image.load_img(img_path, target_size=(224, 224))
-    img_array = image.img_to_array(img)
-    img_array = np.expand_dims(img_array, axis=0)
-    img_array = tf.keras.applications.resnet.preprocess_input(img_array)
-
-    last_conv_layer_name = "conv5_block3_out"
-    last_conv_layer = model.get_layer(last_conv_layer_name)
-    model = tf.keras.models.Model(model.inputs, [model.output, last_conv_layer.output])
-
-    with tf.GradientTape() as tape:
-        model_out, last_conv_layer = model(img_array)
-        class_out = model_out[:, np.argmax(model_out[0])]
-        grads = tape.gradient(class_out, last_conv_layer)
-        pooled_grads = tf.reduce_mean(grads, axis=(0, 1, 2))
-        last_conv_layer_output = last_conv_layer[0]
-        heatmap = last_conv_layer_output @ pooled_grads[..., tf.newaxis]
-        heatmap = tf.squeeze(heatmap)
-        heatmap = tf.maximum(heatmap, 0)
-        heatmap /= tf.reduce_max(heatmap)
-
-    heatmap = heatmap.numpy()
-
+    model = ResNet50(weights='imagenet', include_top=True)
     img = cv2.imread(img_path)
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     img = cv2.resize(img, (224, 224))
+    img_array = np.expand_dims(img, axis=0)
+    img_array = preprocess_input(img_array)
+
+    heatmap = calculate_grad_cam(model, img_array, 'conv5_block3_out')
 
     heatmap = cv2.resize(heatmap, (img.shape[1], img.shape[0]))
     heatmap = cv2.applyColorMap(np.uint8(255 * heatmap), cv2.COLORMAP_JET)
@@ -50,6 +30,21 @@ def grad_cam(img_path):
     cv2.imwrite(result_path, gradcam_on_image)
 
     return result_path
+
+def calculate_grad_cam(model, img_array, layer_name):
+    with tf.GradientTape() as tape:
+        last_conv_layer = model.get_layer(layer_name)
+        iterate = tf.keras.models.Model([model.inputs], [model.output, last_conv_layer.output])
+        model_out, last_conv_layer = iterate(img_array)
+        class_out = model_out[:, np.argmax(model_out[0])]
+        grads = tape.gradient(class_out, last_conv_layer)
+        pooled_grads = tf.reduce_mean(grads, axis=(0, 1, 2))
+        last_conv_layer_output = last_conv_layer[0]
+        heatmap = last_conv_layer_output @ pooled_grads[..., tf.newaxis]
+        heatmap = tf.squeeze(heatmap)
+        heatmap = tf.maximum(heatmap, 0)
+        heatmap /= tf.reduce_max(heatmap)
+    return heatmap.numpy()
 
 def predict(img_path, pet_type):
     if pet_type == 'dog':
