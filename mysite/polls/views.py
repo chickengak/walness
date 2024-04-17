@@ -38,8 +38,10 @@ def product_create(request):
             if gradcam_image_path:  # grad-cam 이미지가 성공적으로 생성되었을 때
                 print('Complete grad_cam')
                 # predict 함수 호출하여 결과 얻기
-                disease, accuracy = predict(img_path)
-                return render(request, "index.html", {'product': product, 'form': ProductForm(), 'gradcam_image_path': gradcam_image_path, 'disease': disease, 'accuracy': accuracy})
+                pet_type = request.POST['pet_type']
+                print(pet_type)
+                disease, accuracy = predict(img_path, pet_type)
+                return render(request, "index.html", {'product': product, 'form': ProductForm(), 'gradcam_image_path': gradcam_image_path, 'disease': disease, 'accuracy': accuracy, 'pet_type': pet_type})
             else:  # grad-cam 이미지 생성 실패 시
                 messages.error(request, 'Failed to generate Grad-CAM image.')
     return redirect('index')
